@@ -1,0 +1,55 @@
+[{
+  "country": "Argentine",
+  "city": "Buenos Aires",
+  "uvReadings": 
+  [
+      {
+        "month": "Jan",
+        "uvIndex": 9
+      },
+      {
+        "month": "Feb",
+        "uvIndex": 9
+      },
+      {
+        "month": "Mar",
+        "uvIndex": 7
+      },
+      {
+        "month": "Apr",
+        "uvIndex": 4
+      },
+      {
+        "month": "May",
+        "uvIndex": 3
+      },
+      {
+        "month": "Jun",
+        "uvIndex": 2
+      }      
+      {
+        "month": "Jul",
+        "uvIndex": 2
+      },
+      {
+        "month": "Aug",
+        "uvIndex": 4
+      },
+      {
+        "month": "Sep",
+        "uvIndex": 5
+      },
+      {
+        "month": "Oct",
+        "uvIndex": 7
+      },
+      {
+        "month": "Nov",
+        "uvIndex": 9
+      },
+      {
+        "month": "Dec",
+        "uvIndex": 10
+      }      
+  ]
+}
