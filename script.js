@@ -5,7 +5,8 @@
 /*global crossfilter*/
 /*global d3*/
 /*global dc*/
-/*global uvIndexData*/
+
+
 
 queue()
 // file type        // the relative filepath to the .json file
@@ -19,6 +20,11 @@ function makeGraphs(error, uvIndexData){
  let transactionCrossFilter = crossfilter(uvIndexData);  //data from .json stored as uvIndexData
  console.log(uvIndexData);
  
+   let parseDate = d3.time.format("%b").parse;
+  uvIndexData.forEach(function(d){
+      d.month = parseDate(d.month);
+   });
+ 
  show_uv_readings(transactionCrossFilter);
  
  dc.renderAll();
@@ -31,8 +37,10 @@ function show_uv_readings(transactionCrossFilter){
    //Step 2 - 
    // Creating a dimension based on the 'month' property of each data point
    
-   // let dc.pluck('month.num')
-   let month_dim = transactionCrossFilter.dimension(dc.pluck('month.num'));
+
+
+   let month_dim = transactionCrossFilter.dimension(dc.pluck("month"));
+   
    let uv_reading_per_month = month_dim.group().reduce(
     
      //Add a fact or data entry
@@ -56,19 +64,19 @@ function show_uv_readings(transactionCrossFilter){
       return p;
       },     
      
-     //Initialise the Reducer
-     function () {
-     return { count: 0, total: 0, average: 0};
-     }
+      //Initialise the Reducer
+      function () {
+      return { count: 0, total: 0, average: 0};
+      }
    );
    
    
-   let min_month = month_dim.bottom(1)[0].month.num;
-   let max_month = month_dim.top(1)[0].month.num;
+   // let min_month = month_dim.bottom(1)[0].month_dim;
+   // let max_month = month_dim.top(1)[0].month_dim;
    
    // STEP 3 - Do the grouping of dimension by month
    // "Grouping" --> summarizing each data point
-   let month_group = month_dim.group();
+   // let month_group = month_dim.group();
    
    //STEP 4 - drawing the scales
    

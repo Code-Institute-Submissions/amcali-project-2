@@ -1,14 +1,14 @@
 [
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 1, "month": "Jan", "uvIndex": 9},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 2, "month": "Feb", "uvIndex": 9},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 3, "month": "Mar", "uvIndex": 7},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 4, "month": "Apr", "uvIndex": 4},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 5, "month": "May", "uvIndex": 3},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 6, "month": "Jun", "uvIndex": 2},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 7, "month": "Jul", "uvIndex": 2},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 8, "month": "Aug", "uvIndex": 4},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 9, "month": "Sep", "uvIndex": 5},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 10, "month": "Oct", "uvIndex": 7},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 11, "month": "Nov", "uvIndex": 9},
-    {"country": "Argentine" , "city": "Buenos Aires", "month.num": 12, "month": "Dec", "uvIndex": 10}
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 1, "month": "Jan", "uvIndex": 9},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 2, "month": "Feb", "uvIndex": 9},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 3, "month": "Mar", "uvIndex": 7},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 4, "month": "Apr", "uvIndex": 4},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 5, "month": "May", "uvIndex": 3},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 6, "month": "Jun", "uvIndex": 2},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 7, "month": "Jul", "uvIndex": 2},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 8, "month": "Aug", "uvIndex": 4},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 9, "month": "Sep", "uvIndex": 5},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 10, "month": "Oct", "uvIndex": 7},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 11, "month": "Nov", "uvIndex": 9},
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 12, "month": "Dec", "uvIndex": 10}
 ]
