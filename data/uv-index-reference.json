@@ -10,5 +10,19 @@
     {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 9, "month": "Sep", "uvIndex": 5},
     {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 10, "month": "Oct", "uvIndex": 7},
     {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 11, "month": "Nov", "uvIndex": 9},
-    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 12, "month": "Dec", "uvIndex": 10}
+    {"country": "Argentine" , "city": "Buenos Aires", "monthNum": 12, "month": "Dec", "uvIndex": 10},
+    
+    {"country": "Australia" , "city": "Darwin", "monthNum": 1, "month": "Jan", "uvIndex": 12},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 2, "month": "Feb", "uvIndex": 13},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 3, "month": "Mar", "uvIndex": 12},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 4, "month": "Apr", "uvIndex": 10},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 5, "month": "May", "uvIndex": 8},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 6, "month": "Jun", "uvIndex": 8},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 7, "month": "Jul", "uvIndex": 8},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 8, "month": "Aug", "uvIndex": 10},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 9, "month": "Sep", "uvIndex": 11},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 10, "month": "Oct", "uvIndex": 13},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 11, "month": "Nov", "uvIndex": 12},
+    {"country": "Australia" , "city": "Darwin", "monthNum": 12, "month": "Dec", "uvIndex": 12}    
+    
 ]

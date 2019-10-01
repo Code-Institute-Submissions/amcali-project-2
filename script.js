@@ -67,26 +67,68 @@ function makeGraphs(error, uvIndexData){
    let min_month = month_dim.bottom(1)[0].month;
    let max_month = month_dim.top(1)[0].month;
    
-   // STEP 3 - Do the grouping of dimension by month
+   // STEP 3 - Do the grouping of dimension by city
    // "Grouping" --> summarizing each data point
-   // let month_group = month_dim.group();
+
+    function uv_by_city(city) {
+     return function(d) {
+         if (d.city === city) {
+             return +d.uvIndex;
+         } 
+         else {
+             return 0;
+         }
+     };
+    }
+    
+   let uvOfBuenosAires = month_dim.group().reduceSum(uv_by_city('Buenos Aires'));
+   let uvofDarwin = month_dim.group().reduceSum(uv_by_city('Darwin'));
+ 
    
-   //STEP 4 - drawing the scales
-   
-    dc.lineChart("#line-graph")
+   //STEP 4 - drawing the graph scales
+
+  let compositeChart = dc.compositeChart('#line-graph');
+  
+  compositeChart
     .width(500)
     .height(400)
     .margins({top: 10, right: 50, bottom: 30, left: 50})
-    .dimension(month_dim)
+    .dimension(month_dim)  
     .group(uv_reading_per_month)
     .valueAccessor(function (d) {
          return d.value.average;
      })
-    .transitionDuration(500)
+    .transitionDuration(500)    
     .x(d3.time.scale().domain([min_month,max_month]))
     .xAxisLabel("Month")
     .yAxisLabel("UV Index")
-    .yAxis().ticks(4);
+    .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
+    .renderHorizontalGridLines(true)    
+    .compose([
+      dc.lineChart(compositeChart)
+          .colors('green')
+          .group(uvOfBuenosAires, 'Buenos Aires'),
+      dc.lineChart(compositeChart)
+          .colors('red')
+          .group(uvofDarwin, 'Darwin'),
+          ])
+    .brushOn(false)
+    .render();          
+          
+    // dc.lineChart("#line-graph")
+    // .width(500)
+    // .height(400)
+    // .margins({top: 10, right: 50, bottom: 30, left: 50})
+    // .dimension(month_dim)
+    // .group(uv_reading_per_month)
+    // .valueAccessor(function (d) {
+    //      return d.value.average;
+    //  })
+    // .transitionDuration(500)
+    // .x(d3.time.scale().domain([min_month,max_month]))
+    // .xAxisLabel("Month")
+    // .yAxisLabel("UV Index")
+    // .yAxis().ticks(4);
    
    // below for bar chart appears, but with wrong presentation of data
    // dc.barChart("#line-graph")
@@ -111,8 +153,6 @@ function makeGraphs(error, uvIndexData){
 }
 
 
-function show_uv_readings(transactionCrossFilter){
- 
-
-}
+// function show_uv_readings(transactionCrossFilter){
+// }
    
