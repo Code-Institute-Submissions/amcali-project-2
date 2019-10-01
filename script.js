@@ -25,16 +25,9 @@ function makeGraphs(error, uvIndexData){
       d.month = parseDate(d.month);
    });
  
- show_uv_readings(transactionCrossFilter);
+ // show_uv_readings(transactionCrossFilter);
  
- dc.renderAll();
- 
-}
-
-
-function show_uv_readings(transactionCrossFilter){
- 
-   //Step 2 - 
+    //Step 2 - 
    // Creating a dimension based on the 'month' property of each data point
    
 
@@ -71,8 +64,8 @@ function show_uv_readings(transactionCrossFilter){
    );
    
    
-   // let min_month = month_dim.bottom(1)[0].month_dim;
-   // let max_month = month_dim.top(1)[0].month_dim;
+   let min_month = month_dim.bottom(1)[0].month;
+   let max_month = month_dim.top(1)[0].month;
    
    // STEP 3 - Do the grouping of dimension by month
    // "Grouping" --> summarizing each data point
@@ -80,40 +73,46 @@ function show_uv_readings(transactionCrossFilter){
    
    //STEP 4 - drawing the scales
    
-    // dc.lineChart("#line-graph")
-    // .width(500)
-    // .height(400)
-    // .margins({top: 10, right: 50, bottom: 30, left: 50})
-    // .dimension(month_dim)
-    // .group(uv_reading_per_month)
-    // .valueAccessor(function (d) {
-    //      return d.value.average;
-    //  })
-    // .transitionDuration(500)
-    // .x(d3.time.scale().domain([min_month,max_month]))
-    // .xAxisLabel("Month")
-    // .yAxisLabel("UV Index")
-    // .yAxis().ticks(4);
-   
-   //below for bar chart appears, but with wrong presentation of data
-   dc.barChart("#line-graph")
-    .width(800)
+    dc.lineChart("#line-graph")
+    .width(500)
     .height(400)
-    .margins({top:10, right:50, bottom:30, left:50})
+    .margins({top: 10, right: 50, bottom: 30, left: 50})
     .dimension(month_dim)
     .group(uv_reading_per_month)
     .valueAccessor(function (d) {
          return d.value.average;
      })
     .transitionDuration(500)
-    .x(d3.scale.ordinal())
-    .xUnits(dc.units.ordinal)
-    .elasticY(true)
+    .x(d3.time.scale().domain([min_month,max_month]))
     .xAxisLabel("Month")
     .yAxisLabel("UV Index")
-    .yAxis().ticks(13);
+    .yAxis().ticks(4);
+   
+   // below for bar chart appears, but with wrong presentation of data
+   // dc.barChart("#line-graph")
+   //  .width(800)
+   //  .height(400)
+   //  .margins({top:10, right:50, bottom:30, left:50})
+   //  .dimension(month_dim)
+   //  .group(uv_reading_per_month)
+   //  .valueAccessor(function (d) {
+   //       return d.value.average;
+   //   })
+   //  .transitionDuration(500)
+   //  .x(d3.scale.ordinal())
+   //  .xUnits(dc.units.ordinal)
+   //  .elasticY(true)
+   //  .xAxisLabel("Month")
+   //  .yAxisLabel("UV Index")
+   //  .yAxis().ticks(13);
+ 
+ dc.renderAll();
+ 
+}
 
-        
+
+function show_uv_readings(transactionCrossFilter){
+ 
 
 }
    
