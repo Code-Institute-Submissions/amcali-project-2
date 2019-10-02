@@ -18,7 +18,7 @@ function makeGraphs(error, uvIndexData){
  
  // Step 1 - create a cross filter
  let transactionCrossFilter = crossfilter(uvIndexData);  //data from .json stored as uvIndexData
- console.log(uvIndexData);
+// console.log(uvIndexData); <-- sanity check
  
    let parseDate = d3.time.format("%b").parse;
   uvIndexData.forEach(function(d){
@@ -29,10 +29,9 @@ function makeGraphs(error, uvIndexData){
  
     //Step 2 - 
    // Creating a dimension based on the 'month' property of each data point
-   
-
 
    let month_dim = transactionCrossFilter.dimension(dc.pluck("month"));
+   let city_dim = transactionCrossFilter.dimension(dc.pluck("city"));
    
    let uv_reading_per_month = month_dim.group().reduce(
     
@@ -90,36 +89,19 @@ function makeGraphs(error, uvIndexData){
   let compositeChart = dc.compositeChart('#line-graph');
   
   //require 3 arrays. 1: contain over 20 colours; 2: contain all the cities; 3: an array to push all the colours according to each city.
-  let cityArray = [
-                   "Buenos Aires", 
-                   "Darwin", 
-                   "Melbourne", 
-                   "Sydney", 
-                   "Rio de Janeiro", 
-                   "Vancouver", 
-                   "Havana", 
-                   "Port Stanley", 
-                   "Paris", 
-                   "Berlin", 
-                   "Iraklion", 
-                   "Tokyo",
-                   "Nairobi", 
-                   "Tananarive",
-                   "Maputo",
-                   "Ulan Bator",
-                   "Wellington",
-                   "Panama",
-                   "St Petersbourg",
-                   "Singapore",
-                   "Cape Town",
-                   "Palma de Mallorca",
-                   "Colombo",
-                   "Bangkok",
-                   "Los Angeles",
-                   "New York",
-                   "Hanoi"
-                   ];
-   
+  var cityArray = [];  //declaring an array to store the values of the cities stored in uv-index-reference.json file
+  function getCities(){
+   let count = 1;
+   for (i=0; i<=27; i++){
+    cityArray[i] = cityArray.push(city_dim);
+    count++;
+    continue;
+    if (i > 27){
+    return cityArray;
+    }
+   }
+  }
+
    let colorArray = [
                   '#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
               		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
@@ -145,8 +127,10 @@ function makeGraphs(error, uvIndexData){
    // }
                
                     
-   console.log(cityArray);                 
+   console.log(getCities());                 
    console.log(colorArray);
+   
+   
   compositeChart
     .width(500)
     .height(400)
