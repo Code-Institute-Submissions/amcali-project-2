@@ -163,12 +163,12 @@ function makeGraphs(error, uvIndexData){
     .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
     .renderHorizontalGridLines(true)    
     .compose([
-      // dc.lineChart(compositeChart)
-      //     .colors('green')
-      //     .group(uvOfBuenosAires, 'Buenos Aires'),
-      // dc.lineChart(compositeChart)
-      //     .colors('red')
-      //     .group(uvofDarwin, 'Darwin'),
+      dc.lineChart(compositeChart)
+          .colors('green')
+          .group(uvOfBuenosAires, 'Buenos Aires'),
+      dc.lineChart(compositeChart)
+          .colors('red')
+          .group(uvofDarwin, 'Darwin'),
       
           ])
     .brushOn(false)
