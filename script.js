@@ -24,7 +24,7 @@ function makeGraphs(error, uvIndexData){
 
  
    let parseDate = d3.time.format("%b").parse;
-  uvIndexData.forEach(function(d){
+   uvIndexData.forEach(function(d){
       d.month = parseDate(d.month);
    });
    
@@ -34,9 +34,8 @@ function makeGraphs(error, uvIndexData){
    // Creating a dimension based on the 'month' property of each data point
 
    let month_dim = transactionCrossFilter.dimension(dc.pluck("month"));
-   // let city_dim = transactionCrossFilter.dimension(dc.pluck("city")); <--not in use
-   
-   // console.log(city_dim); <-- not in use
+   // let city_dim = transactionCrossFilter.dimension(dc.pluck("city")); <-- not in use
+
 
    
    let uv_reading_per_month = month_dim.group().reduce(
@@ -94,56 +93,57 @@ function makeGraphs(error, uvIndexData){
   
   //require 3 arrays. 1: contain over 20 colours; 2: contain all the cities; 3: an array to push all the colours according to each city.
   let cityArray = [
+                   //testing the following 3 cities first before adding subsequent cities
                    {"city": "Buenos Aires", "color": '#FF6633'},
                    {"city": "Darwin", "color": '#FFB399'},
                    {"city": "Melbourne", "color": '#FF33FF'},
-                   {"city": "Sydney", "color": '#FFFF99'},
-                   {"city": "Rio de Janeiro", "color": '#00B3E6'},
-                   {"city": "Vancouver", "color": '#E6B333'},
-                   {"city": "Havana", "color": '#3366E6'},
-                   {"city": "Port Stanley", "color": '#999966'},
-                   {"city": "Paris", "color": "#99FF99"},
-                   {"city": "Berlin", "color": "#80B300"},
-                   {"city": "Iraklion", "color": "#B34D4D"},
-                   {"city": "Tokyo", "color": "#809900"},
-                   {"city": "Nairobi", "color": "#E6B3B3"},
-                   {"city": "Tananarive", "color": "#6680B3"},
-                   {"city": "Maputo", "color": "#66991A"},
-                   {"city": "Ulan Bator", "color": "#FF99E6"},
-                   {"city": "Wellington", "color": "#CCFF1A"},
-                   {"city": "Panama", "color": "#FF1A66"},
-                   {"city": "St Petersbourg", "color": "#E6331A"},
-                   {"city": "Singapore", "color": "#33FFCC"},
-                   {"city": "Cape Town", "color": "#66994D"},
-                   {"city": "Palma de Mallorca", "color": "#B366CC"},
-                   {"city": "Colombo", "color": "#4D8000"},
-                   {"city": "Bangkok", "color": "#B33300"},
-                   {"city": "Los Angeles", "color": "#CC80CC"},
-                   {"city": "New York", "color": "#66664D"},
-                   {"city": "Hanoi", "color": "#991AFF"}
+                   
+                   // {"city": "Sydney", "color": '#FFFF99'},
+                   // {"city": "Rio de Janeiro", "color": '#00B3E6'},
+                   // {"city": "Vancouver", "color": '#E6B333'},
+                   // {"city": "Havana", "color": '#3366E6'},
+                   // {"city": "Port Stanley", "color": '#999966'},
+                   // {"city": "Paris", "color": "#99FF99"},
+                   // {"city": "Berlin", "color": "#80B300"},
+                   // {"city": "Iraklion", "color": "#B34D4D"},
+                   // {"city": "Tokyo", "color": "#809900"},
+                   // {"city": "Nairobi", "color": "#E6B3B3"},
+                   // {"city": "Tananarive", "color": "#6680B3"},
+                   // {"city": "Maputo", "color": "#66991A"},
+                   // {"city": "Ulan Bator", "color": "#FF99E6"},
+                   // {"city": "Wellington", "color": "#CCFF1A"},
+                   // {"city": "Panama", "color": "#FF1A66"},
+                   // {"city": "St Petersbourg", "color": "#E6331A"},
+                   // {"city": "Singapore", "color": "#33FFCC"},
+                   // {"city": "Cape Town", "color": "#66994D"},
+                   // {"city": "Palma de Mallorca", "color": "#B366CC"},
+                   // {"city": "Colombo", "color": "#4D8000"},
+                   // {"city": "Bangkok", "color": "#B33300"},
+                   // {"city": "Los Angeles", "color": "#CC80CC"},
+                   // {"city": "New York", "color": "#66664D"},
+                   // {"city": "Hanoi", "color": "#991AFF"}
                 ];  //declaring an array to use when drawing the composite chart
                 
       
    // let uvOfBuenosAires = month_dim.group().reduceSum(uv_by_city('Buenos Aires'));
    // let uvofDarwin = month_dim.group().reduceSum(uv_by_city('Darwin'));
    
-   let uvOfCities = month_dim.group().reduceSum(uv_by_city(cityArray.city));
-   
-   function drawLineOfCities(city, color){
+
+
     
-          city = cityArray.city;
-          color = cityArray.color;
-          
-          let charts = [
-           dc.lineChart(compositeChart)  
-          .colors(uvOfCities, color)         
-          .group(uvOfCities, city), 
-          ];
-          
-          return charts;
-          
-    } ;     
- 
+     let chartsOfLineCharts = [];
+     for (each_city of cityArray){
+     let uvOfCities = month_dim.group().reduceSum(uv_by_city(each_city.city)); //pushes the reduceSum of uv index for each city into the array, and grouped by month
+     let c = dc.lineChart(compositeChart)  
+           .colors(each_city.color)         
+           .group(uvOfCities, each_city.city);
+         
+         chartsOfLineCharts.push(c);
+     
+     }
+
+    console.log(chartsOfLineCharts);
+    
 
    //STEP 5 - drawing the graph scales
 
@@ -174,7 +174,7 @@ function makeGraphs(error, uvIndexData){
     .yAxisLabel("UV Index")
     .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
     .renderHorizontalGridLines(true)    
-    .compose(drawLineOfCities())     //    .compose(charts)
+    .compose(chartsOfLineCharts)     //    .compose(charts)
     .brushOn(false)
     .render();          
           
