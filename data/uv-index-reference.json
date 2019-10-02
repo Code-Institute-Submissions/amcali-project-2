@@ -23,6 +23,19 @@
     {"country": "Australia" , "city": "Darwin", "monthNum": 9, "month": "Sep", "uvIndex": 11},
     {"country": "Australia" , "city": "Darwin", "monthNum": 10, "month": "Oct", "uvIndex": 13},
     {"country": "Australia" , "city": "Darwin", "monthNum": 11, "month": "Nov", "uvIndex": 12},
-    {"country": "Australia" , "city": "Darwin", "monthNum": 12, "month": "Dec", "uvIndex": 12}    
+    {"country": "Australia" , "city": "Darwin", "monthNum": 12, "month": "Dec", "uvIndex": 12},
+    
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 1, "month": "Jan", "uvIndex": 8},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 2, "month": "Feb", "uvIndex": 8},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 3, "month": "Mar", "uvIndex": 6},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 4, "month": "Apr", "uvIndex": 4},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 5, "month": "May", "uvIndex": 2},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 6, "month": "Jun", "uvIndex": 2},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 7, "month": "Jul", "uvIndex": 2},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 8, "month": "Aug", "uvIndex": 3},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 9, "month": "Sep", "uvIndex": 5},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 10, "month": "Oct", "uvIndex": 6},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 11, "month": "Nov", "uvIndex": 8},
+    {"country": "Australia" , "city": "Melbourne", "monthNum": 12, "month": "Dec", "uvIndex": 9}
     
 ]
