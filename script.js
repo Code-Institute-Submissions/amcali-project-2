@@ -21,6 +21,8 @@ function makeGraphs(error, uvIndexData){
  let transactionCrossFilter = crossfilter(uvIndexData);  //data from .json stored as uvIndexData
  console.log(uvIndexData);
  
+ 
+ // show_discipline_selector(uvIndexData);
 
  
    let parseDate = d3.time.format("%b").parse;
@@ -34,7 +36,7 @@ function makeGraphs(error, uvIndexData){
    // Creating a dimension based on the 'month' property of each data point
 
    let month_dim = transactionCrossFilter.dimension(dc.pluck("month"));
-   // let city_dim = transactionCrossFilter.dimension(dc.pluck("city")); <-- not in use
+
 
 
    
@@ -213,6 +215,17 @@ function makeGraphs(error, uvIndexData){
  
  dc.renderAll();
  
+}    // end of makeGraphs function
+
+
+//function to allow user to select city to view data for
+function show_discipline_selector(uvIndexData){
+ 
+   city_dim = transactionCrossFilter.dimension(dc.pluck("city"));
+   let group = dim.group(uv_reading_per_month);
+   dc.selectMenu("#discipline-selector")
+    .dim(city_dim)
+    .group(group);
 }
 
 
