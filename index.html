@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     
     <!-- Dependencies for D3, DC and Crossfilter -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
@@ -17,8 +18,18 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
     <!-- end dependencies -->
 
+    <!-- Mapbox CDN -->    
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.3.1/mapbox-gl.css' rel='stylesheet' />
+    <!--end Mapbox CDN -->
+    
+    <!--CSS -->
+    <link rel="stylesheet" href=<a href="style.css" type="text/css" />
+
     <!-- Optional JavaScript -->    
     <script src="script.js"></script>
+    
+    
 
     <title>UV Index Readings</title>
   </head>
@@ -50,6 +61,7 @@
       </section>
 
       <section class = "page" id = "search" style="height:600px; background-color: azure;"></section>
+        <div id="map"></div>
       <section class = "page" id = "glossary" style="height:600px; background-color: yellow;"></section>
     </div>
 
