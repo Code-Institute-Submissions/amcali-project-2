@@ -43,7 +43,8 @@ function show_discipline_selector(transactionCrossFilter){
    let group = city_dim.group();
    dc.selectMenu("#discipline-selector")
     .dimension(city_dim)
-    .group(group);
+    .group(group)
+    .multiple(true);
 }
 
 
@@ -70,12 +71,7 @@ function show_discipline_selector(transactionCrossFilter){
 // }
 
 function show_line_graphs(transactionCrossFilter){
- 
-  
 
-   
-
- 
     //Step 2 - 
    // Creating a dimension based on the 'month' property of each data point
 
