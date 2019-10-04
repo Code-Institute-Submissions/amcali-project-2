@@ -2,9 +2,9 @@
 /*global crossfilter*/
 /*global d3*/
 /*global dc*/
+/* global mapboxgl*/
+/*global axios*/
 /*global $*/
-
-
 
 
 queue()
@@ -249,7 +249,7 @@ function show_line_graphs(transactionCrossFilter){
    
 }  //end of show_line_graphs function
 
-/* global mapboxgl */
+
 /*Displaying the map */
 mapboxgl.accessToken = 'pk.eyJ1IjoiYW1jYWxpIiwiYSI6ImNrMHl4ZXdzcDA4c3czY3BlcWttc2k3YzkifQ.apM6qnRNX442RufrpJjbyA';
 
@@ -267,6 +267,19 @@ let map = new mapboxgl.Map({
     noWrap: true
   }
  });
+ 
+// map.addLayer({
+//   id: 'trees-point',
+//   type: 'circle',
+//   source: 'trees',
+//   paint: {
+//     'circle-radius': 3,
+//     'circle-color': '#223b53',
+//     'circle-stroke-color': 'white',
+//     'circle-stroke-width': 1,
+//     'circle-opacity': 0.5
+//   }
+// });
 
 
 
@@ -278,3 +291,28 @@ let map = new mapboxgl.Map({
   //   .setLngLat([-21.9270884, 64.1436456])
   //   .addTo(map);
 
+/*Importing the API for today's Index readings of the cities*/
+
+const API_URL = "http://api.weatherbit.io/v2.0/current";
+const API_LAT = "?&lat=";
+const API_LON = "&lon=";
+const API_KEY = "&key=0ca43393266643c4b87e8df01b8c6496";
+
+//pseudo code function to return longitude and latitude of city
+// function to_get_long_lat_of_city(city, long, lat){
+    
+//     let long_lat_of_cities = [];
+    
+//     // for city of cityArray
+    
+// };
+
+
+function testAPI()
+{
+    axios.get("https://api.weatherbit.io/v2.0/current?&lat=38.123&lon=-78.543&key=0ca43393266643c4b87e8df01b8c6496")
+        .then(function(response){
+            console.log(response);
+        })
+    
+}
