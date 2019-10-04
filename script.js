@@ -1,21 +1,16 @@
-
-// queue().defer(....).await() <-- this is an illustrated example
-
 /*global queue*/ 
 /*global crossfilter*/
 /*global d3*/
 /*global dc*/
 /*global $*/
-/*global uvIndexData*/
-/*global mapboxgl*/
 
-mapboxgl.accessToken = 'pk.eyJ1IjoiYW1jYWxpIiwiYSI6ImNrMHl4OXMybjBidjYzb293eTZqYXloamQifQ.i3OLQpsT9U8OkRgQU7kNDw';
+
+
 
 queue()
-// file type        // the relative filepath to the .json file
-.defer(d3.json, "data/uv-index-reference.json" ) // load in the json file with uv-index references
-
-.await(makeGraphs);
+ // file type        // the relative filepath to the .json file
+ .defer(d3.json, "data/uv-index-reference.json" ) // load in the json file with uv-index references
+ .await(makeGraphs);
 
 function makeGraphs(error, uvIndexData){
  
@@ -24,7 +19,7 @@ function makeGraphs(error, uvIndexData){
  console.log(uvIndexData);
  
 
-     let parseDate = d3.time.format("%b").parse;
+ let parseDate = d3.time.format("%b").parse;
    uvIndexData.forEach(function(d){
       d.month = parseDate(d.month);
    });
@@ -37,6 +32,7 @@ function makeGraphs(error, uvIndexData){
  dc.renderAll();
  
 }    // end of makeGraphs function
+
 
 function show_discipline_selector(transactionCrossFilter){
  
@@ -253,13 +249,32 @@ function show_line_graphs(transactionCrossFilter){
    
 }  //end of show_line_graphs function
 
-
+/* global mapboxgl */
+/*Displaying the map */
+mapboxgl.accessToken = 'pk.eyJ1IjoiYW1jYWxpIiwiYSI6ImNrMHl4ZXdzcDA4c3czY3BlcWttc2k3YzkifQ.apM6qnRNX442RufrpJjbyA';
 
 // adding map from Mapbox
-  var map = new mapboxgl.Map({
+let map = new mapboxgl.Map({
   container: 'map', // #1 HTML container id
   style: 'mapbox://styles/mapbox/streets-v9', // style URL
-  center: [-21.9270884, 64.1436456], // #2 starting position as [lng, lat]
-  zoom: 13
-});
+  center: [0, 0], // #2 starting position as [lng, lat]
+  zoom: 0.7,
+  
+  tileLayer: {
+    // this map option disables world wrapping. by default, it is false.
+    continuousWorld: false,
+    // this option disables loading tiles outside of the world bounds.
+    noWrap: true
+  }
+ });
+
+
+
+    
+// map.addControl(new mapboxgl.FullscreenControl());
+
+  // // create the marker
+  //   new mapboxgl.Marker()
+  //   .setLngLat([-21.9270884, 64.1436456])
+  //   .addTo(map);
 
