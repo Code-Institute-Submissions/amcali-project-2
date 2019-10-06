@@ -320,27 +320,22 @@ function testAPI()
 }
 
 
+
+
+
+
+// for (i = 0; i < lngLat.length; i++) {
+//     for (j = 0; j < lngLat.length; j++){
+//     let count = 1;
+//     lngLat = lngLat[i, j];
+//     count++;
+//     }
+// }
+
+// console.log(lngLat);
+
 //Declaring an array to record positions of all cities by longitude & latitude to adhere to Mapbox standards, and to place markers on map
 let lngLat = [];
-
-for (let l of cityArray){
-
-    let lng = l.longitude;
-    let lat = l.latitude;
-
-lngLat.push([lng, lat]);
-
-}
-
-console.log(lngLat);
-
-for (i = 0; i < lngLat.length; i++) {
-  let count = 1;
-  lngLat = lngLat[i];
-  count++;
-}
-
-console.log(lngLat);
 
 // Save all the markers into an array
 // to be used for later according to drop down selection
@@ -350,7 +345,7 @@ for (let p of cityArray) {
 
     // Place a marker for each place into created array
     let m = new mapboxgl.Marker()
-    .setLngLat(p.lngLat)
+    .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
     .setHTML(`<h3>${p.city}</h3><p>testing this works</p>'`))
     .addTo(map);
@@ -359,3 +354,4 @@ for (let p of cityArray) {
     long_lat_of_cities.push(m);
 
 }
+
