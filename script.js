@@ -303,6 +303,7 @@ const API_LON = "&lon=";
 
 
 
+
 /* example of API format
 "https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=37.75&lon=-122.37"
 */
