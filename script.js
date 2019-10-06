@@ -6,6 +6,39 @@
 /*global axios*/
 /*global $*/
 
+  //require 3 arrays. 1: contain over 20 colours; 2: contain all the cities; 3: an array to push all the colours according to each city.
+  let cityArray = [
+                   //testing the following 3 cities first before adding subsequent cities
+                   {"city": "Buenos Aires", "color": '#FF6633', "lngLat": [58.3816, 34.6037]},
+                   {"city": "Darwin", "color": '#FFB399', "lngLat": [130.8456, 12.4634]},
+                   {"city": "Melbourne", "color": '#FF33FF', "lngLat": [144.9631, 37.8136]},
+
+                   // {"city": "Sydney", "color": '#FFFF99', "lngLat": [151.2093, 33.8688]},
+                   // {"city": "Rio de Janeiro", "color": '#00B3E6', "lngLat": [43.1729, 22.9068]},
+                   // {"city": "Vancouver", "color": '#E6B333', "longitude": 123.1207, "latitude": 49.2827},
+                   // {"city": "Havana", "color": '#3366E6', "longitude": 82.3666, "latitude": 23.1136},
+                   // {"city": "Port Stanley", "color": '#999966', "longitude": 57.8517, "latitude": 51.6977},
+                   // {"city": "Paris", "color": "#99FF99", "longitude": 2.3522, "latitude": 48.8566},
+                   // {"city": "Berlin", "color": "#80B300", "longitude": 13.4050, "latitude": 52.5200},
+                   // {"city": "Heraklion", "color": "#B34D4D", "longitude": 25.1442, "latitude": 35.3387},
+                   // {"city": "Tokyo", "color": "#809900", "longitude": 139.6503, "latitude": 35.6762},
+                   // {"city": "Nairobi", "color": "#E6B3B3", "longitude": 36.8219, "latitude": 1.2921},
+                   // {"city": "Antananarivo", "color": "#6680B3", "longitude": 47.5079, "latitude": 18.8792},
+                   // {"city": "Maputo", "color": "#66991A", "longitude": 32.5732, "latitude": 25.9692},
+                   // {"city": "Ulaanbaatar", "color": "#FF99E6", "longitude": 106.9057, "latitude": 47.8864},
+                   // {"city": "Wellington", "color": "#CCFF1A", "longitude": 174.7762, "latitude": 41.2865},
+                   // {"city": "Panama", "color": "#FF1A66", "longitude": 80.7821, "latitude": 8.5380},
+                   // {"city": "St Petersbourg", "color": "#E6331A", "longitude": 30.3351, "latitude": 59.9343},
+                   // {"city": "Singapore", "color": "#33FFCC", "longitude": 103.8198, "latitude": 1.3521},
+                   // {"city": "Cape Town", "color": "#66994D", "longitude": 18.4241, "latitude": 33.9249},
+                   // {"city": "Palma de Mallorca", "color": "#B366CC", "longitude": 2.6502, "latitude": 39.5696},
+                   // {"city": "Colombo", "color": "#4D8000", "longitude": 79.8612, "latitude": 6.9271},
+                   // {"city": "Bangkok", "color": "#B33300", "longitude": 13.7563, "latitude": 100.5018},
+                   // {"city": "Los Angeles", "color": "#CC80CC", "longitude": 118.2437, "latitude": 34.0522},
+                   // {"city": "New York", "color": "#66664D", "longitude": 74.0060, "latitude": 40.7128},
+                   // {"city": "Hanoi", "color": "#991AFF", "longitude": 105.8342, "latitude": 21.0278}
+                ];  //declaring an array to use when drawing the composite chart
+
 
 queue()
  // file type        // the relative filepath to the .json file
@@ -127,38 +160,7 @@ function show_line_graphs(transactionCrossFilter){
 
   let compositeChart = dc.compositeChart('#line-graph');
 
-  //require 3 arrays. 1: contain over 20 colours; 2: contain all the cities; 3: an array to push all the colours according to each city.
-  let cityArray = [
-                   //testing the following 3 cities first before adding subsequent cities
-                   {"city": "Buenos Aires", "color": '#FF6633'},
-                   {"city": "Darwin", "color": '#FFB399'},
-                   {"city": "Melbourne", "color": '#FF33FF'},
 
-                   // {"city": "Sydney", "color": '#FFFF99'},
-                   // {"city": "Rio de Janeiro", "color": '#00B3E6'},
-                   // {"city": "Vancouver", "color": '#E6B333'},
-                   // {"city": "Havana", "color": '#3366E6'},
-                   // {"city": "Port Stanley", "color": '#999966'},
-                   // {"city": "Paris", "color": "#99FF99"},
-                   // {"city": "Berlin", "color": "#80B300"},
-                   // {"city": "Iraklion", "color": "#B34D4D"},
-                   // {"city": "Tokyo", "color": "#809900"},
-                   // {"city": "Nairobi", "color": "#E6B3B3"},
-                   // {"city": "Tananarive", "color": "#6680B3"},
-                   // {"city": "Maputo", "color": "#66991A"},
-                   // {"city": "Ulan Bator", "color": "#FF99E6"},
-                   // {"city": "Wellington", "color": "#CCFF1A"},
-                   // {"city": "Panama", "color": "#FF1A66"},
-                   // {"city": "St Petersbourg", "color": "#E6331A"},
-                   // {"city": "Singapore", "color": "#33FFCC"},
-                   // {"city": "Cape Town", "color": "#66994D"},
-                   // {"city": "Palma de Mallorca", "color": "#B366CC"},
-                   // {"city": "Colombo", "color": "#4D8000"},
-                   // {"city": "Bangkok", "color": "#B33300"},
-                   // {"city": "Los Angeles", "color": "#CC80CC"},
-                   // {"city": "New York", "color": "#66664D"},
-                   // {"city": "Hanoi", "color": "#991AFF"}
-                ];  //declaring an array to use when drawing the composite chart
 
 
    // let uvOfBuenosAires = month_dim.group().reduceSum(uv_by_city('Buenos Aires'));
@@ -298,14 +300,28 @@ const API_KEY = "74384801b390bc25a0a33dfef5c3d862";
 const API_LAT = "?&lat=";
 const API_LON = "&lon=";
 
+
 //pseudo code function to return longitude and latitude of city
-// function to_get_long_lat_of_city(city, long, lat){
 
-//     let long_lat_of_cities = [];
 
-//     // for city of cityArray
 
-// };
+
+
+/*
+     let uvOfCities = month_dim.group().reduceSum(uv_by_city(each_city.city)); //pushes the reduceSum of uv index for each city into the array, and grouped by month
+     let c = dc.lineChart(compositeChart)
+           .colors(each_city.color)
+           .group(uvOfCities, each_city.city);
+
+         chartsOfLineCharts.push(c);
+*/
+
+    function to_get_long_lat_of_city(city, longLat){
+
+
+};
+
+
 
 /* example of API format
 "https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=37.75&lon=-122.37"
@@ -324,9 +340,18 @@ function testAPI()
 }
 
 
-// Place a marker
-var marker = new mapboxgl.Marker()
-.setLngLat([103.8198, 1.3521])  //creating an object
-.setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-.setHTML('<h3>Singapore</h3><p>testing this works</p>'))
-.addTo(map); //adding marker to map
+// Save all the markers into an array
+// to be used for later according to drop down selection
+let long_lat_of_cities = [];
+
+for (let p of cityArray) {
+    // Place a marker for each place into created array
+    let m = new mapboxgl.Marker()
+    .setLngLat(p.lngLat)
+    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML(`<h3>${p.city}</h3><p>testing this works</p>'`))
+    .addTo(map);
+
+    // add the created marker to the list of all markers
+    long_lat_of_cities.push(m);
+        }
