@@ -9,9 +9,9 @@
   //require 3 arrays. 1: contain over 20 colours; 2: contain all the cities; 3: an array to push all the colours according to each city.
   let cityArray = [
                    //testing the following 3 cities first before adding subsequent cities
-                   {"city": "Buenos Aires", "color": '#FF6633', "lngLat": [58.3816, 34.6037]},
-                   {"city": "Darwin", "color": '#FFB399', "lngLat": [130.8456, 12.4634]},
-                   {"city": "Melbourne", "color": '#FF33FF', "lngLat": [144.9631, 37.8136]},
+                   {"city": "Buenos Aires", "color": '#FF6633', "longitude": -58.3816, "latitude": -34.6037},
+                   {"city": "Darwin", "color": '#FFB399', "lng": 130.8456, "lat": 12.4634},
+                   {"city": "Melbourne", "color": '#FF33FF', "lng": 144.9631, "lat": 37.8136},
 
                    // {"city": "Sydney", "color": '#FFFF99', "lngLat": [151.2093, 33.8688]},
                    // {"city": "Rio de Janeiro", "color": '#00B3E6', "lngLat": [43.1729, 22.9068]},
@@ -301,12 +301,6 @@ const API_LAT = "?&lat=";
 const API_LON = "&lon=";
 
 
-//pseudo code function to return longitude and latitude of city
-
-
-
-
-
 /*
      let uvOfCities = month_dim.group().reduceSum(uv_by_city(each_city.city)); //pushes the reduceSum of uv index for each city into the array, and grouped by month
      let c = dc.lineChart(compositeChart)
@@ -315,12 +309,6 @@ const API_LON = "&lon=";
 
          chartsOfLineCharts.push(c);
 */
-
-    function to_get_long_lat_of_city(city, longLat){
-
-
-};
-
 
 
 /* example of API format
@@ -340,18 +328,31 @@ function testAPI()
 }
 
 
+
+//Declaring an array to record positions of all cities by longitude & latitude to adhere to Mapbox standards, and to place markers on map
+let lngLat = [];
+
 // Save all the markers into an array
 // to be used for later according to drop down selection
 let long_lat_of_cities = [];
 
 for (let p of cityArray) {
+
+    for (let l of cityArray){
+
+        let lng = l.longitude;
+        let lat = l.latitude;
+
+    lngLat.push(lng, lat);
     // Place a marker for each place into created array
     let m = new mapboxgl.Marker()
-    .setLngLat(p.lngLat)
+
+    .setLngLat(lngLat)
     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
     .setHTML(`<h3>${p.city}</h3><p>testing this works</p>'`))
     .addTo(map);
 
     // add the created marker to the list of all markers
     long_lat_of_cities.push(m);
-        }
+    }
+}
