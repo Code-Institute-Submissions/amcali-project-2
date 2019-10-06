@@ -1,4 +1,4 @@
-/*global queue*/ 
+/*global queue*/
 /*global crossfilter*/
 /*global d3*/
 /*global dc*/
@@ -13,29 +13,29 @@ queue()
  .await(makeGraphs);
 
 function makeGraphs(error, uvIndexData){
- 
+
  // Step 1 - create a cross filter
  let transactionCrossFilter = crossfilter(uvIndexData);  //data from .json stored as uvIndexData
  console.log(uvIndexData);
- 
+
 
  let parseDate = d3.time.format("%b").parse;
    uvIndexData.forEach(function(d){
       d.month = parseDate(d.month);
    });
 
- 
+
  show_discipline_selector(transactionCrossFilter);
  show_line_graphs(transactionCrossFilter);
- 
- 
+
+
  dc.renderAll();
- 
+
 }    // end of makeGraphs function
 
 
 function show_discipline_selector(transactionCrossFilter){
- 
+
    let city_dim = transactionCrossFilter.dimension(dc.pluck("city"));
    let group = city_dim.group();
    dc.selectMenu("#discipline-selector")
@@ -55,7 +55,7 @@ function show_discipline_selector(transactionCrossFilter){
 
 //    let city_dim = transactionCrossFilter.dimension(dc.pluck("city"));
 //    let group = city_dim.group();
-   
+
 //    dc.selectMenu("#discipline-selector")
 //     .dim(city_dim)
 //     .group(group);
@@ -69,13 +69,13 @@ function show_discipline_selector(transactionCrossFilter){
 
 function show_line_graphs(transactionCrossFilter){
 
-    //Step 2 - 
+    //Step 2 -
    // Creating a dimension based on the 'month' property of each data point
 
    let month_dim = transactionCrossFilter.dimension(dc.pluck("month"));
 
    let uv_reading_per_month = month_dim.group().reduce(
-    
+
      //Add a fact or data entry
       function(p, v) {
        p.count++;
@@ -83,7 +83,7 @@ function show_line_graphs(transactionCrossFilter){
        p.average = p.total / p.count;
        return p;
       },
-      
+
      //Remove a fact or data entry
       function(p, v) {
       p.count--;
@@ -95,18 +95,18 @@ function show_line_graphs(transactionCrossFilter){
           p.average = p.total / p.count;
       }
       return p;
-      },     
-     
+      },
+
       //Initialise the Reducer
       function () {
       return { count: 0, total: 0, average: 0};
       }
    );
-   
-   
+
+
    let min_month = month_dim.bottom(1)[0].month;
    let max_month = month_dim.top(1)[0].month;
-   
+
    // STEP 3 - Do the grouping of dimension by city
    // "Grouping" --> summarizing each data point
 
@@ -114,26 +114,26 @@ function show_line_graphs(transactionCrossFilter){
      return function(d) {
          if (d.city === city) {
              return +d.uvIndex;
-         } 
+         }
          else {
              return 0;
          }
      };
     }
 
- 
-   
+
+
    // STEP 4 - Do the grouping of dimension by city and color
 
   let compositeChart = dc.compositeChart('#line-graph');
-  
+
   //require 3 arrays. 1: contain over 20 colours; 2: contain all the cities; 3: an array to push all the colours according to each city.
   let cityArray = [
                    //testing the following 3 cities first before adding subsequent cities
                    {"city": "Buenos Aires", "color": '#FF6633'},
                    {"city": "Darwin", "color": '#FFB399'},
                    {"city": "Melbourne", "color": '#FF33FF'},
-                   
+
                    // {"city": "Sydney", "color": '#FFFF99'},
                    // {"city": "Rio de Janeiro", "color": '#00B3E6'},
                    // {"city": "Vancouver", "color": '#E6B333'},
@@ -159,27 +159,27 @@ function show_line_graphs(transactionCrossFilter){
                    // {"city": "New York", "color": "#66664D"},
                    // {"city": "Hanoi", "color": "#991AFF"}
                 ];  //declaring an array to use when drawing the composite chart
-                
-      
+
+
    // let uvOfBuenosAires = month_dim.group().reduceSum(uv_by_city('Buenos Aires'));
    // let uvofDarwin = month_dim.group().reduceSum(uv_by_city('Darwin'));
-   
 
 
-    
+
+
      let chartsOfLineCharts = [];
      for (each_city of cityArray){
      let uvOfCities = month_dim.group().reduceSum(uv_by_city(each_city.city)); //pushes the reduceSum of uv index for each city into the array, and grouped by month
-     let c = dc.lineChart(compositeChart)  
-           .colors(each_city.color)         
+     let c = dc.lineChart(compositeChart)
+           .colors(each_city.color)
            .group(uvOfCities, each_city.city);
-         
+
          chartsOfLineCharts.push(c);
-     
+
      }
 
     console.log(chartsOfLineCharts);
-    
+
 
    //STEP 5 - drawing the graph scales
 
@@ -190,30 +190,30 @@ function show_line_graphs(transactionCrossFilter){
    //    dc.lineChart(compositeChart)
    //        .colors('red')
    //        .group(uvofDarwin, 'Darwin'),
-      
+
            // ];
-    
-    
-   
+
+
+
   compositeChart
     .width(500)
     .height(400)
     .margins({top: 10, right: 50, bottom: 30, left: 50})
-    .dimension(month_dim)  
+    .dimension(month_dim)
     .group(uv_reading_per_month)
     .valueAccessor(function (d) {
          return d.value.average;
      })
-    .transitionDuration(500)    
+    .transitionDuration(500)
     .x(d3.time.scale().domain([min_month,max_month]))
     .xAxisLabel("Month")
     .yAxisLabel("UV Index")
     .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
-    .renderHorizontalGridLines(true)    
+    .renderHorizontalGridLines(true)
     .compose(chartsOfLineCharts)     //    .compose(charts)
     .brushOn(false)
-    .render();          
-          
+    .render();
+
     // dc.lineChart("#line-graph")
     // .width(500)
     // .height(400)
@@ -228,7 +228,7 @@ function show_line_graphs(transactionCrossFilter){
     // .xAxisLabel("Month")
     // .yAxisLabel("UV Index")
     // .yAxis().ticks(4);
-   
+
    // below for bar chart appears, but with wrong presentation of data
    // dc.barChart("#line-graph")
    //  .width(800)
@@ -246,7 +246,7 @@ function show_line_graphs(transactionCrossFilter){
    //  .xAxisLabel("Month")
    //  .yAxisLabel("UV Index")
    //  .yAxis().ticks(13);
-   
+
 }  //end of show_line_graphs function
 
 
@@ -259,7 +259,7 @@ let map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/streets-v9', // style URL
   center: [0, 0], // #2 starting position as [lng, lat]
   zoom: 0.7,
-  
+
   tileLayer: {
     // this map option disables world wrapping. by default, it is false.
     continuousWorld: false,
@@ -267,7 +267,7 @@ let map = new mapboxgl.Map({
     noWrap: true
   }
  });
- 
+
 // map.addLayer({
 //   id: 'trees-point',
 //   type: 'circle',
@@ -283,7 +283,7 @@ let map = new mapboxgl.Map({
 
 
 
-    
+
 // map.addControl(new mapboxgl.FullscreenControl());
 
   // // create the marker
@@ -293,26 +293,40 @@ let map = new mapboxgl.Map({
 
 /*Importing the API for today's Index readings of the cities*/
 
-const API_URL = "http://api.weatherbit.io/v2.0/current";
+const API_URL = "https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=37.75&lon=-122.37";
+const API_KEY = "74384801b390bc25a0a33dfef5c3d862";
 const API_LAT = "?&lat=";
 const API_LON = "&lon=";
-const API_KEY = "&key=0ca43393266643c4b87e8df01b8c6496";
 
 //pseudo code function to return longitude and latitude of city
 // function to_get_long_lat_of_city(city, long, lat){
-    
+
 //     let long_lat_of_cities = [];
-    
+
 //     // for city of cityArray
-    
+
 // };
+
+/* example of API format
+"https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=37.75&lon=-122.37"
+*/
+/*constructing the format of the API URL end point
+axios.get(API_URL + "/uvi?" + "appid" + API_KEY + "&lat=" + API_LAT + "&lon=" + API_LON)*/
 
 
 function testAPI()
 {
-    axios.get("https://api.weatherbit.io/v2.0/current?&lat=38.123&lon=-78.543&key=0ca43393266643c4b87e8df01b8c6496")
+    axios.get("https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=37.75&lon=-122.37")
         .then(function(response){
             console.log(response);
         })
-    
+
 }
+
+
+// Place a marker
+var marker = new mapboxgl.Marker()
+.setLngLat([103.8198, 1.3521])  //creating an object
+.setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+.setHTML('<h3>Singapore</h3><p>testing this works</p>'))
+.addTo(map); //adding marker to map
