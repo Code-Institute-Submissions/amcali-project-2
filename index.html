@@ -58,7 +58,14 @@
       <section class = "page" id = "home" style="height:600px; background-color:pink;"></section>
 
       <section class = "page" id = "about" style="height:600px; background-color: orange;">
-        <div id = "discipline-selector"></div>
+        <div id="discipline-selector">
+          <select class="dc-select-menu" multiple="true">
+          <option value="">Select all</option>
+            <option class="dc-select-option" value="Buenos Aires">Buenos Aires</option>
+            <option class="dc-select-option" value="Darwin">Darwin: 12</option>
+            <option class="dc-select-option" value="Melbourne">Melbourne: 12</option>
+          </select>
+        </div>
         <div id = "line-graph"></div> <!--To display uv-index data of selected countries during different months -->
       </section>
 
