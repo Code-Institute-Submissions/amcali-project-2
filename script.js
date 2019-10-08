@@ -31,7 +31,7 @@ let map = new mapboxgl.Map({
                     {"city": "Darwin", "color": '#FFB399', "longitude": 130.8456, "latitude": -12.4634, "latReading": "13°S"},
                     {"city": "Melbourne", "color": '#FF33FF', "longitude": 144.9631, "latitude": -37.8136, "latReading": "37°S"},
                     {"city": "Sydney", "color": '#FFFF99', "longitude": 151.2093, "latitude": -33.8688, "latReading": "34°S"},
-                    {"city": "Rio de Janerio", "color": '#00B3E6', "longitude": 43.1729, "latitude": 22.9068, "latReading": "23°S"},
+                    {"city": "Rio de Janerio", "color": '#00B3E6', "longitude": -43.1729, "latitude": -22.9068, "latReading": "23°S"},
                     {"city": "Vancouver", "color": '#E6B333', "longitude": -123.1207, "latitude": 49.2827, "latReading": "49°N"},
                     {"city": "Havana", "color": '#3366E6', "longitude": -82.3666, "latitude": 23.1136, "latReading": "23°N"},
                     {"city": "Port Stanley", "color": '#999966', "longitude": -57.8517, "latitude": -51.6977, "latReading": "58°S"},
