@@ -59,21 +59,29 @@
 
       <section class = "page" id = "about" style="height:600px; background-color: orange;">
         <div id="discipline-selector">
-          <select class="dc-select-menu" multiple="true">
-          <option value="">Select all</option>
-            <option class="dc-select-option" value="Buenos Aires">Buenos Aires</option>
-            <option class="dc-select-option" value="Darwin">Darwin: 12</option>
-            <option class="dc-select-option" value="Melbourne">Melbourne: 12</option>
-          </select>
+          <!--<select id="dc-select-menu" multiple="true">-->
+          <!--<option value="Select all">Select all</option>-->
+          <!--  <option class="dc-select-option" value="Buenos Aires">Buenos Aires</option>-->
+          <!--  <option class="dc-select-option" value="Darwin">Darwin</option>-->
+          <!--  <option class="dc-select-option" value="Melbourne">Melbourne</option>-->
+          <!--</select>-->
         </div>
         <div id = "line-graph"></div> <!--To display uv-index data of selected countries during different months -->
       </section>
-
+      <div>
+      <select id="dc-select-menu" multiple="true">
+          <option value="Select all">Select all</option>
+          <option value="Buenos Aires">Buenos Aires</option>
+          <option value="Darwin">Darwin</option>
+          <option value="Melbourne">Melbourne</option>
+      </select>
+      <div id="test"></div>
+      </div>
       <section class = "page" id = "search" style="height:600px;"></section> <!--background-color: azure;-->
         <div id="map"></div>
       <section class = "page" id = "glossary" style="height:600px;"></section> <!--background-color: yellow;-->
     </div>
-
+  
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
