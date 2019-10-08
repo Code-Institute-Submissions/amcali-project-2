@@ -26,35 +26,34 @@ let map = new mapboxgl.Map({
 
   //require 3 arrays. 1: contain over 20 colours; 2: contain all the cities; 3: an array to push all the colours according to each city.
   let cityArray = [
-                   //testing the following 3 cities first before adding subsequent cities
-                   {"city": "Buenos Aires", "color": '#FF6633', "longitude": -58.3816, "latitude": -34.6037}, //"coordinates": [ -151.5129, 63.1016, 0.0 ]
-                   {"city": "Darwin", "color": '#FFB399', "longitude": 130.8456, "latitude": -12.4634},
-                   {"city": "Melbourne", "color": '#FF33FF', "longitude": 144.9631, "latitude": -37.8136},
-
-                   // {"city": "Sydney", "color": '#FFFF99', "lngLat": [151.2093, 33.8688]},
-                   // {"city": "Rio de Janeiro", "color": '#00B3E6', "lngLat": [43.1729, 22.9068]},
-                   // {"city": "Vancouver", "color": '#E6B333', "longitude": 123.1207, "latitude": 49.2827},
-                   // {"city": "Havana", "color": '#3366E6', "longitude": 82.3666, "latitude": 23.1136},
-                   // {"city": "Port Stanley", "color": '#999966', "longitude": 57.8517, "latitude": 51.6977},
-                   // {"city": "Paris", "color": "#99FF99", "longitude": 2.3522, "latitude": 48.8566},
-                   // {"city": "Berlin", "color": "#80B300", "longitude": 13.4050, "latitude": 52.5200},
-                   // {"city": "Heraklion", "color": "#B34D4D", "longitude": 25.1442, "latitude": 35.3387},
-                   // {"city": "Tokyo", "color": "#809900", "longitude": 139.6503, "latitude": 35.6762},
-                   // {"city": "Nairobi", "color": "#E6B3B3", "longitude": 36.8219, "latitude": 1.2921},
-                   // {"city": "Antananarivo", "color": "#6680B3", "longitude": 47.5079, "latitude": 18.8792},
-                   // {"city": "Maputo", "color": "#66991A", "longitude": 32.5732, "latitude": 25.9692},
-                   // {"city": "Ulaanbaatar", "color": "#FF99E6", "longitude": 106.9057, "latitude": 47.8864},
-                   // {"city": "Wellington", "color": "#CCFF1A", "longitude": 174.7762, "latitude": 41.2865},
-                   // {"city": "Panama", "color": "#FF1A66", "longitude": 80.7821, "latitude": 8.5380},
-                   // {"city": "St Petersbourg", "color": "#E6331A", "longitude": 30.3351, "latitude": 59.9343},
-                   // {"city": "Singapore", "color": "#33FFCC", "longitude": 103.8198, "latitude": 1.3521},
-                   // {"city": "Cape Town", "color": "#66994D", "longitude": 18.4241, "latitude": 33.9249},
-                   // {"city": "Palma de Mallorca", "color": "#B366CC", "longitude": 2.6502, "latitude": 39.5696},
-                   // {"city": "Colombo", "color": "#4D8000", "longitude": 79.8612, "latitude": 6.9271},
-                   // {"city": "Bangkok", "color": "#B33300", "longitude": 13.7563, "latitude": 100.5018},
-                   // {"city": "Los Angeles", "color": "#CC80CC", "longitude": 118.2437, "latitude": 34.0522},
-                   // {"city": "New York", "color": "#66664D", "longitude": 74.0060, "latitude": 40.7128},
-                   // {"city": "Hanoi", "color": "#991AFF", "longitude": 105.8342, "latitude": 21.0278}
+                    //testing the following 3 cities first before adding subsequent cities
+                    {"city": "Buenos Aires", "color": '#FF6633', "longitude": -58.3816, "latitude": -34.6037, "latReading": "35°S"}, //"coordinates": [ -151.5129, 63.1016, 0.0 ]
+                    {"city": "Darwin", "color": '#FFB399', "longitude": 130.8456, "latitude": -12.4634, "latReading": "13°S"},
+                    {"city": "Melbourne", "color": '#FF33FF', "longitude": 144.9631, "latitude": -37.8136, "latReading": "37°S"},
+                    {"city": "Sydney", "color": '#FFFF99', "longitude": 151.2093, "latitude": -33.8688, "latReading": "34°S"},
+                    {"city": "Rio de Janerio", "color": '#00B3E6', "longitude": 43.1729, "latitude": 22.9068, "latReading": "23°S"},
+                    {"city": "Vancouver", "color": '#E6B333', "longitude": -123.1207, "latitude": 49.2827, "latReading": "49°N"},
+                    {"city": "Havana", "color": '#3366E6', "longitude": -82.3666, "latitude": 23.1136, "latReading": "23°N"},
+                    {"city": "Port Stanley", "color": '#999966', "longitude": -57.8517, "latitude": -51.6977, "latReading": "58°S"},
+                    {"city": "Paris", "color": "#99FF99", "longitude": 2.3522, "latitude": 48.8566, "latReading": "49°N"},
+                    {"city": "Berlin", "color": "#80B300", "longitude": 13.4050, "latitude": 52.5200, "latReading": "52°N"},
+                    {"city": "Heraklion", "color": "#B34D4D", "longitude": 25.1442, "latitude": 35.3387, "latReading": "35°N"},
+                    {"city": "Tokyo", "color": "#809900", "longitude": 139.6503, "latitude": 35.6762, "latReading": "36°N"},
+                    {"city": "Nairobi", "color": "#E6B3B3", "longitude": -36.8219, "latitude": -1.2921, "latReading": "1°S"},
+                    {"city": "Antananarivo", "color": "#6680B3", "longitude": -47.5079, "latitude": -18.8792, "latReading": "19°S"},
+                    {"city": "Maputo", "color": "#66991A", "longitude": -32.5732, "latitude": -25.9692, "latReading": "26°S"},
+                    {"city": "Ulaanbaatar", "color": "#FF99E6", "longitude": 106.9057, "latitude": 47.8864, "latReading": "48°N"},
+                    {"city": "Wellington", "color": "#CCFF1A", "longitude": 174.7762, "latitude": -41.2865, "latReading": "42°S"},
+                    {"city": "Panama", "color": "#FF1A66", "longitude": -80.7821, "latitude": 8.5380, "latReading": "9°N"},
+                    {"city": "St Petersburg", "color": "#E6331A", "longitude": 30.3351, "latitude": 59.9343, "latReading": "60°N"},
+                    {"city": "Singapore", "color": "#33FFCC", "longitude": 103.8198, "latitude": 1.3521, "latReading": "1°N"},
+                    {"city": "Cape Town", "color": "#66994D", "longitude": 18.4241, "latitude": -33.9249, "latReading": "34°S"},
+                    {"city": "Palma de Mallorca", "color": "#B366CC", "longitude": 2.6502, "latitude": 39.5696, "latReading": "39°N"},
+                    {"city": "Colombo", "color": "#4D8000", "longitude": 79.8612, "latitude": 6.9271, "latReading": "13°N"},
+                    {"city": "Bangkok", "color": "#B33300", "longitude": 13.7563, "latitude": 100.5018, "latReading": "14°N"},
+                    {"city": "Los Angeles", "color": "#CC80CC", "longitude": -118.2437, "latitude": 34.0522, "latReading": "34°N"},
+                    {"city": "New York", "color": "#66664D", "longitude": -74.0060, "latitude": 40.7128, "latReading": "41°N"},
+                    {"city": "Hanoi", "color": "#991AFF", "longitude": 105.8342, "latitude": 21.0278, "latReading": "21°N"}
                 ];  //declaring an array to use when drawing the composite chart
 
 
@@ -299,7 +298,7 @@ function createmarker(place) {
             let m = new mapboxgl.Marker()
             .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-            .setHTML(`<h3>${p.city}</h3><p>${p.longitude}${p.latitude}</p>'`))
+            .setHTML(`<h3>${p.city}</h3><p>${p.latReading}</p>`))
             .addTo(map);
         
             // add the created marker to the list of all markers
