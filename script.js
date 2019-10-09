@@ -5,23 +5,7 @@
 /* global mapboxgl*/
 /*global axios*/
 /*global $*/
-/*Displaying the map */
-mapboxgl.accessToken = 'pk.eyJ1IjoiYW1jYWxpIiwiYSI6ImNrMHl4ZXdzcDA4c3czY3BlcWttc2k3YzkifQ.apM6qnRNX442RufrpJjbyA';
 
-// adding map from Mapbox
-let map = new mapboxgl.Map({
-  container: 'map', // #1 HTML container id
-  style: 'mapbox://styles/mapbox/streets-v9', // style URL
-  center: [0, 0], // #2 starting position as [lng, lat]
-  zoom: 0.7,
-
-  tileLayer: {
-    // this map option disables world wrapping. by default, it is false.
-    continuousWorld: false,
-    // this option disables loading tiles outside of the world bounds.
-    noWrap: true
-  }
- });
  
 
   //require 3 arrays. 1: contain over 20 colours; 2: contain all the cities; 3: an array to push all the colours according to each city.
@@ -31,7 +15,7 @@ let map = new mapboxgl.Map({
                     {"city": "Darwin", "color": '#FFB399', "longitude": 130.8456, "latitude": -12.4634, "latReading": "13°S"},
                     {"city": "Melbourne", "color": '#FF33FF', "longitude": 144.9631, "latitude": -37.8136, "latReading": "37°S"},
                     {"city": "Sydney", "color": '#FFFF99', "longitude": 151.2093, "latitude": -33.8688, "latReading": "34°S"},
-                    {"city": "Rio de Janerio", "color": '#00B3E6', "longitude": -43.1729, "latitude": -22.9068, "latReading": "23°S"},
+                //    {"city": "Rio de Janerio", "color": '#00B3E6', "longitude": -43.1729, "latitude": -22.9068, "latReading": "23°S"},
                     {"city": "Vancouver", "color": '#E6B333', "longitude": -123.1207, "latitude": 49.2827, "latReading": "49°N"},
                     {"city": "Havana", "color": '#3366E6', "longitude": -82.3666, "latitude": 23.1136, "latReading": "23°N"},
                     {"city": "Port Stanley", "color": '#999966', "longitude": -57.8517, "latitude": -51.6977, "latReading": "58°S"},
@@ -50,14 +34,58 @@ let map = new mapboxgl.Map({
                     {"city": "Cape Town", "color": "#66994D", "longitude": 18.4241, "latitude": -33.9249, "latReading": "34°S"},
                     {"city": "Palma de Mallorca", "color": "#B366CC", "longitude": 2.6502, "latitude": 39.5696, "latReading": "39°N"},
                     {"city": "Colombo", "color": "#4D8000", "longitude": 79.8612, "latitude": 6.9271, "latReading": "13°N"},
-                    {"city": "Bangkok", "color": "#B33300", "longitude": 13.7563, "latitude": 100.5018, "latReading": "14°N"},
+                    {"city": "Bangkok", "color": "#B33300", "longitude": 100.5018, "latitude": 13.7563, "latReading": "14°N"},
                     {"city": "Los Angeles", "color": "#CC80CC", "longitude": -118.2437, "latitude": 34.0522, "latReading": "34°N"},
                     {"city": "New York", "color": "#66664D", "longitude": -74.0060, "latitude": 40.7128, "latReading": "41°N"},
                     {"city": "Hanoi", "color": "#991AFF", "longitude": 105.8342, "latitude": 21.0278, "latReading": "21°N"}
                 ];  //declaring an array to use when drawing the composite chart
 
 
+/*Displaying the map */
+mapboxgl.accessToken = 'pk.eyJ1IjoiYW1jYWxpIiwiYSI6ImNrMHl4ZXdzcDA4c3czY3BlcWttc2k3YzkifQ.apM6qnRNX442RufrpJjbyA';
 
+
+// adding map from Mapbox
+let map = new mapboxgl.Map({
+  container: 'map', // #1 HTML container id
+  style: 'mapbox://styles/mapbox/streets-v9', // style URL
+  center: [0, 0], // #2 starting position as [lng, lat]
+  zoom: 0.3,
+ });
+
+ 
+// disable map rotation using right click + drag
+// map.dragRotate.disable();
+
+
+ 
+// disable map rotation using touch rotation gesture
+// map.touchZoomRotate.disableRotation();
+
+// Save all the markers into an array
+// to be used for later according to drop down selection
+let long_lat_of_cities = [];
+
+for (let p of cityArray) {
+
+    // Place a marker for each place into created array
+    let m = new mapboxgl.Marker()
+    .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
+    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+    .setHTML(`<h3>${p.city}</h3><p>${p.latReading}</p>'`))
+    .addTo(map);
+
+    // add the created marker to the list of all markers
+    long_lat_of_cities.push(m);
+    
+
+}
+
+map.setRenderWorldCopies(false);
+// map.dragPan.disable();
+
+
+/*Creating the Composite Chart*/ 
 queue()
  // file type        // the relative filepath to the .json file
  .defer(d3.json, "data/uv-index-reference.json" ) // load in the json file with uv-index references
@@ -206,10 +234,10 @@ function show_line_graphs(transactionCrossFilter){
 
 /*Importing the API for today's Index readings of the cities*/
 
-const API_URL = "https://api.openweathermap.org/data/2.5";
-const API_KEY = "74384801b390bc25a0a33dfef5c3d862";
-var API_LAT = cityArray.latitude;
-var API_LON = cityArray.longitude;
+// const API_URL = "https://api.openweathermap.org/data/2.5";
+// const API_KEY = "74384801b390bc25a0a33dfef5c3d862";
+// var API_LAT = cityArray.latitude;
+// var API_LON = cityArray.longitude;
 
 
 //sample API format: "https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=37.75&lon=-122.37"
@@ -232,14 +260,14 @@ var API_LON = cityArray.longitude;
 
 
 
-function testAPI()
-{
-    axios.get("https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=-34.6037&lon=-58.3816")
-        .then(function(response){
-            console.log(response);
-        })
+// function testAPI()
+// {
+//     axios.get("https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=-34.6037&lon=-58.3816")
+//         .then(function(response){
+//             console.log(response);
+//         })
     
-}    
+// }    
     
 //     $(function(){
 //     $("#discipline-selector").click(function(){
@@ -266,46 +294,29 @@ axios.get(API_URL + "/uvi?" + "appid" + API_KEY + "&lat=" + API_LAT + "&lon=" + 
 
 
 
-// Save all the markers into an array
-// to be used for later according to drop down selection
-let long_lat_of_cities = [];
 
-// for (let p of cityArray) {
 
-//     // Place a marker for each place into created array
-//     let m = new mapboxgl.Marker()
-//     .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
-//     .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-//     .setHTML(`<h3>${p.city}</h3><p>${p.longitude}${p.latitude}</p>'`))
-//     .addTo(map);
-
-//     // add the created marker to the list of all markers
-//     long_lat_of_cities.push(m);
-    
-
+// function clearmarker() {
+//     for(let m of long_lat_of_cities)
+//         m.remove();
 // }
 
-function clearmarker() {
-    for(let m of long_lat_of_cities)
-        m.remove();
-}
-
-function createmarker(place) {
-    for (let p of cityArray)
-    {
-        if (p.city == place)
-        {
-            let m = new mapboxgl.Marker()
-            .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
-            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-            .setHTML(`<h3>${p.city}</h3><p>${p.latReading}</p>`))
-            .addTo(map);
+// function createmarker(place) {
+//     for (let p of cityArray)
+//     {
+//         if (p.city == place)
+//         {
+//             let m = new mapboxgl.Marker()
+//             .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
+//             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+//             .setHTML(`<h3>${p.city}</h3><p>${p.latReading}</p>`))
+//             .addTo(map);
         
-            // add the created marker to the list of all markers
-            long_lat_of_cities.push(m);
-        }
-    }
-}
+//             // add the created marker to the list of all markers
+//             long_lat_of_cities.push(m);
+//         }
+//     }
+// }
 
 
 // $('#discipline-selector').multiSelect({
