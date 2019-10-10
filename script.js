@@ -120,17 +120,21 @@ function makeGraphs(error, uvIndexData){
 let parseDate = d3.time.format("%b").parse;
     uvIndexData.forEach(function(d){
       d.month = parseDate(d.month);
-      return d.month;
+    //   return d.month;
+    console.log(d.month);
 });
 
-console.log(parseDate);
+
 
 
  show_discipline_selector(transactionCrossFilter);
  show_line_graphs(transactionCrossFilter);
+ 
+
 
 
  dc.renderAll();
+ 
 
 }    // end of makeGraphs function
 
@@ -159,7 +163,6 @@ function show_line_graphs(transactionCrossFilter){
    // Creating a dimension based on the 'month' property of each data point
 
    let month_dim = transactionCrossFilter.dimension(dc.pluck("month"));
-
    let uv_reading_per_month = month_dim.group().reduce(
 
      //Add a fact or data entry
@@ -192,6 +195,9 @@ function show_line_graphs(transactionCrossFilter){
 
    let min_month = month_dim.bottom(1)[0].month;
    let max_month = month_dim.top(1)[0].month;
+   
+   console.log(month_dim.bottom(1)[0].month);
+   console.log (month_dim.top(1)[0].month);
 
    // STEP 3 - Do the grouping of dimension by city
    // "Grouping" --> summarizing each data point
@@ -230,20 +236,28 @@ function show_line_graphs(transactionCrossFilter){
    //STEP 5 - drawing the graph scales
 
 
+
   compositeChart
     .width(700)
     .height(400)
-    .margins({top: 10, right: 50, bottom: 30, left: 50})
+    .margins({top: 10, right: 125, bottom: 75, left: 50})
+    .renderlet(function (chart) {
+                    chart.selectAll("g.x text")
+                      .attr('dx', '-30')
+                      .attr('dy', '-10')
+                      .attr('transform', "rotate(-90)");
+                })
     .dimension(month_dim)
     .group(uv_reading_per_month)
     .valueAccessor(function (d) {
          return d.value.average;
      })
     .transitionDuration(500)
+    .useViewBoxResizing(true)
     .x(d3.time.scale().domain([min_month,max_month]))
     .xAxisLabel("Month")
     .yAxisLabel("UV Index")
-    .legend(dc.legend().x(300).y(20).itemHeight(13).gap(5))
+    .legend(dc.legend().x(600).y(0).itemHeight(10).gap(5))
     .renderHorizontalGridLines(true)
     .compose(chartsOfLineCharts)     //    .compose(charts)
     .brushOn(false)
@@ -252,6 +266,15 @@ function show_line_graphs(transactionCrossFilter){
 
 }  //end of show_line_graphs function
 
+/* to call event on mobile responsive */ //function does not work
+// window.onresize = function(event) {
+//   var newWidth = document.getElementById('box-test').offsetWidth;
+//   compositeChart.width(newWidth)
+//     .transitionDuration(0);
+
+//   dc.renderAll();
+//   compositeChart.transitionDuration(500);
+// };
 
 // function clearmarker() {
 //     for(let m of long_lat_of_cities)

@@ -3,12 +3,13 @@ html,body{
   color: #4682B4;
 }
 
+
 h2{
   background-color: #E0FFFF;
 }
 
 #map {
-  width:40%;
-  height: 50%;
-  position:absolute;
+  width:600px;
+  height: 600px;
+  /*position:absolute;*/
 }
