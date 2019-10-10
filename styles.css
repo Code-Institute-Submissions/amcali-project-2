@@ -1,9 +1,10 @@
 html,body{
   font-family: 'Special Elite', cursive;
+  color: #4682B4;
 }
 
 h2{
-  background-color: "#E0FFFF";
+  background-color: #E0FFFF;
 }
 
 #map {

@@ -6,12 +6,40 @@
 /*global axios*/
 /*global $*/
 
+
+/*Displaying active pages upon click of navigation bar drop down menu*/
+$(function() {
+    
+    function initPageOne()
+    {
+    $("#home").click(function() {
+        $(".page").hide(); // hide all the other pages
+        $("#home").show(); // show the home page to user on click
+    })
+
+    $("#what-is-uvi").click(function() {
+        $(".page").hide();
+        $("#what-is-uvi").show();   
+    })
+
+    $("#uvi-around-the-world").click(function() {
+        $(".page").hide();
+        $("#uvi-around-the-world").show();
+    })
+
+    $("#summary").click(function() {
+        $(".page").hide();
+        $("#summary").show();
+    })
+    
+
+}
+});    
  
 
   //require 3 arrays. 1: contain over 20 colours; 2: contain all the cities; 3: an array to push all the colours according to each city.
   let cityArray = [
-                    //testing the following 3 cities first before adding subsequent cities
-                    {"city": "Buenos Aires", "color": '#FF6633', "longitude": -58.3816, "latitude": -34.6037, "latReading": "35°S"}, //"coordinates": [ -151.5129, 63.1016, 0.0 ]
+                    {"city": "Buenos Aires", "color": '#FF6633', "longitude": -58.3816, "latitude": -34.6037, "latReading": "35°S"},
                     {"city": "Darwin", "color": '#FFB399', "longitude": 130.8456, "latitude": -12.4634, "latReading": "13°S"},
                     {"city": "Melbourne", "color": '#FF33FF', "longitude": 144.9631, "latitude": -37.8136, "latReading": "37°S"},
                     {"city": "Sydney", "color": '#FFFF99', "longitude": 151.2093, "latitude": -33.8688, "latReading": "34°S"},
@@ -38,7 +66,7 @@
                     {"city": "Los Angeles", "color": "#CC80CC", "longitude": -118.2437, "latitude": 34.0522, "latReading": "34°N"},
                     {"city": "New York", "color": "#66664D", "longitude": -74.0060, "latitude": 40.7128, "latReading": "41°N"},
                     {"city": "Hanoi", "color": "#991AFF", "longitude": 105.8342, "latitude": 21.0278, "latReading": "21°N"}
-                ];  //declaring an array to use when drawing the composite chart
+                ];  //declaring an array to use when drawing the composite chart, and generating information for contents of mapbox popup markers
 
 
 /*Displaying the map */
@@ -53,14 +81,6 @@ let map = new mapboxgl.Map({
   zoom: 0.3,
  });
 
- 
-// disable map rotation using right click + drag
-// map.dragRotate.disable();
-
-
- 
-// disable map rotation using touch rotation gesture
-// map.touchZoomRotate.disableRotation();
 
 // Save all the markers into an array
 // to be used for later according to drop down selection
@@ -77,7 +97,6 @@ for (let p of cityArray) {
 
     // add the created marker to the list of all markers
     long_lat_of_cities.push(m);
-    
 
 }
 
@@ -123,7 +142,9 @@ function show_discipline_selector(transactionCrossFilter){
    dc.selectMenu("#discipline-selector")
     .dimension(city_dim)
     .group(group)
-    .multiple(true);
+    .multiple(true)
+    .controlsUseVisibility(true)
+    .title(kv => kv.key);
     
     console.log(city_dim);
     console.log(group);

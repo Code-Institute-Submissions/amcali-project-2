@@ -37,21 +37,19 @@
     <div class = "container-fluid">
 
       <!--nav item -->
-      <ul class="nav nav-tabs">
+      <ul class="nav nav-tabs fixed-top">
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#home">HOME</a>
-            <a class="dropdown-item" href="#about">ABOUT</a>
-            <a class="dropdown-item" href="#search">SEARCH</a>
-            <a class="dropdown-item" href="#glossary">GLOSSARY</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
+            <a class="dropdown-item" href="#what-is-uvi">WHAT IS UVI</a>
+            <a class="dropdown-item" href="#uvi-around-world">UVI AROUND THE WORLD</a>
+            <a class="dropdown-item" href="#summary">CONCLUSION</a>
           </div>
         </li>
       </ul>
     <header><h1>The UV Index (UVI)</h1></header>
-      <section class = "page" id = "home" style="height:600px; background-color:pink;">
+      <section class = "page" id = "home" style="height:700px; background-color:pink;">
       <div>
           <h2>What Is The UV Index?</h2>
           <p>
@@ -74,7 +72,7 @@
           </p>
         </div>
       </section>
-      <section class = "page" id = "about" style="height:600px; background-color: orange;">
+      <section class = "page" id = "what-is-uvi" style="height:700px; background-color: orange;">
 
       <div>
           <h2>UV measurements</h2>
@@ -86,41 +84,27 @@
             The closer the city is to equatorial regions, the higher the UV radiation levels.
             Cities with similar latitude reveal similar UVI readings during different times of the year.
             Maximal UV Index values are given for a range of cities in different countries, calculated for the 21st of each month.
-            <br>
-            Click on the different cities to view their illustrated UVI readings, and their locations on the global map for comparison.
           </p>
       </div>    
+
+      </section>
+      
+      <section class = "page" id = "uvi-around-world" style="height:700px; background-color: azure;">
+      <div>
+        Click on the different cities to view their illustrated UVI readings, and their locations on the global map for comparison.
+      </div>
+      
       <div id="map"></div>
-
-          <!--<select id="dc-select-menu" multiple="true">-->
-          <!--<option value="Select all">Select all</option>-->
-          <!--  <option class="dc-select-option" value="Buenos Aires">Buenos Aires</option>-->
-          <!--  <option class="dc-select-option" value="Darwin">Darwin</option>-->
-          <!--  <option class="dc-select-option" value="Melbourne">Melbourne</option>-->
-          <!--</select>-->
-        </div>
-
+      
+ 
       </section>
-      
-      <!--<div>-->
-      <!--<select id="dc-select-menu" multiple="true">-->
-      <!--    <option value="Select all">Select all</option>-->
-      <!--    <option value="Buenos Aires">Buenos Aires</option>-->
-      <!--    <option value="Darwin">Darwin</option>-->
-      <!--    <option value="Melbourne">Melbourne</option>-->
-      <!--    <option value="Sydney">Sydney</option>-->
-      <!--</select>-->
-      <!--<div id="test"></div>-->
-      <!--</div>-->
-      
-      <section class = "page" id = "search" style="height:600px; background-color: azure;">
+      <section class = "page container-fluid" id = "summary" style="height:700px;"></section> <!--background-color: yellow;-->
         <div id="discipline-selector">
-        <div id = "line-graph"></div> <!--To display uv-index data of selected countries during different months -->   
-      </section>
-      <section class = "page" id = "glossary" style="height:600px;"></section> <!--background-color: yellow;-->
+        <div id = "line-graph"></div> <!--To display uv-index data of selected countries during different months -->  
     </div>
+
     
-    <footer style="background-color: yellow; height: 50px;">
+    <footer class="fixed-bottom" style="background-color: yellow; height: 50px;">
     </footer>
   
 
