@@ -101,6 +101,7 @@ for (let p of cityArray) {
 }
 
 map.setRenderWorldCopies(false);
+// map.resize();
 // map.dragPan.disable();
 
 
@@ -240,7 +241,7 @@ function show_line_graphs(transactionCrossFilter){
   compositeChart
     .width(700)
     .height(400)
-    .margins({top: 10, right: 125, bottom: 75, left: 50})
+    .margins({top: 10, right: 135, bottom: 75, left: 50})
     .renderlet(function (chart) {
                     chart.selectAll("g.x text")
                       .attr('dx', '-30')
@@ -257,7 +258,7 @@ function show_line_graphs(transactionCrossFilter){
     .x(d3.time.scale().domain([min_month,max_month]))
     .xAxisLabel("Month")
     .yAxisLabel("UV Index")
-    .legend(dc.legend().x(600).y(0).itemHeight(10).gap(5))
+    .legend(dc.legend().x(600).y(0).itemHeight(9).gap(5))
     .renderHorizontalGridLines(true)
     .compose(chartsOfLineCharts)     //    .compose(charts)
     .brushOn(false)
