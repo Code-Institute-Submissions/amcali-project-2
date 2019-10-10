@@ -15,7 +15,7 @@
                     {"city": "Darwin", "color": '#FFB399', "longitude": 130.8456, "latitude": -12.4634, "latReading": "13°S"},
                     {"city": "Melbourne", "color": '#FF33FF', "longitude": 144.9631, "latitude": -37.8136, "latReading": "37°S"},
                     {"city": "Sydney", "color": '#FFFF99', "longitude": 151.2093, "latitude": -33.8688, "latReading": "34°S"},
-                //    {"city": "Rio de Janerio", "color": '#00B3E6', "longitude": -43.1729, "latitude": -22.9068, "latReading": "23°S"},
+                    {"city": "Rio de Janerio", "color": '#00B3E6', "longitude": -43.1729, "latitude": -22.9068, "latReading": "23°S"},
                     {"city": "Vancouver", "color": '#E6B333', "longitude": -123.1207, "latitude": 49.2827, "latReading": "49°N"},
                     {"city": "Havana", "color": '#3366E6', "longitude": -82.3666, "latitude": 23.1136, "latReading": "23°N"},
                     {"city": "Port Stanley", "color": '#999966', "longitude": -57.8517, "latitude": -51.6977, "latReading": "58°S"},
@@ -98,10 +98,13 @@ function makeGraphs(error, uvIndexData){
  console.log(uvIndexData);
 
 
- let parseDate = d3.time.format("%b").parse;
-   uvIndexData.forEach(function(d){
+let parseDate = d3.time.format("%b").parse;
+    uvIndexData.forEach(function(d){
       d.month = parseDate(d.month);
-   });
+      return d.month;
+});
+
+console.log(parseDate);
 
 
  show_discipline_selector(transactionCrossFilter);
@@ -207,7 +210,7 @@ function show_line_graphs(transactionCrossFilter){
 
 
   compositeChart
-    .width(500)
+    .width(700)
     .height(400)
     .margins({top: 10, right: 50, bottom: 30, left: 50})
     .dimension(month_dim)
@@ -219,7 +222,7 @@ function show_line_graphs(transactionCrossFilter){
     .x(d3.time.scale().domain([min_month,max_month]))
     .xAxisLabel("Month")
     .yAxisLabel("UV Index")
-    .legend(dc.legend().x(80).y(20).itemHeight(13).gap(5))
+    .legend(dc.legend().x(300).y(20).itemHeight(13).gap(5))
     .renderHorizontalGridLines(true)
     .compose(chartsOfLineCharts)     //    .compose(charts)
     .brushOn(false)
@@ -227,73 +230,6 @@ function show_line_graphs(transactionCrossFilter){
 
 
 }  //end of show_line_graphs function
-
-
-
-
-
-/*Importing the API for today's Index readings of the cities*/
-
-// const API_URL = "https://api.openweathermap.org/data/2.5";
-// const API_KEY = "74384801b390bc25a0a33dfef5c3d862";
-// var API_LAT = cityArray.latitude;
-// var API_LON = cityArray.longitude;
-
-
-//sample API format: "https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=37.75&lon=-122.37"
-// Testing of following code returned undefined values. Intention is to extract longitude and latitude coordinates to place as parameters to fetch API data
-// let longArray = [];
-// let latArray = [];
-//  for (i=0; i < cityArray.length; i++)
-//     {
-//         // extract out the current place object by index i
-//         let lo = cityArray.longitude;
-//         let la = cityArray.latitude;
-        
-//         longArray.push(lo);
-//         latArray.push(la);
-//     }
-
-
-// console.log(longArray);
-// console.log(latArray);
-
-
-
-// function testAPI()
-// {
-//     axios.get("https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=-34.6037&lon=-58.3816")
-//         .then(function(response){
-//             console.log(response);
-//         })
-    
-// }    
-    
-//     $(function(){
-//     $("#discipline-selector").click(function(){
-//         let searchTerms = $("#search").val();
-    
-//         axios.get(API_URL + /uvi? + appid + API_KEY + &lat= + -34.6037 + &lon= + -58.3816)
-//         .then(function(response){
-//             let uv_reading_for_today = response.data;
-//             console.log(uv_reading_for_today)
-//         });
-//     })
-// })
-
-
-
-/* example of API format
-"https://api.openweathermap.org/data/2.5/uvi?appid=74384801b390bc25a0a33dfef5c3d862&lat=37.75&lon=-122.37"
-*/
-/*constructing the format of the API URL end point
-axios.get(API_URL + "/uvi?" + "appid" + API_KEY + "&lat=" + API_LAT + "&lon=" + API_LON)*/
-
-
-
-
-
-
 
 
 // function clearmarker() {

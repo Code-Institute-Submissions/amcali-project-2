@@ -1,3 +1,11 @@
+html,body{
+  font-family: 'Special Elite', cursive;
+}
+
+h2{
+  background-color: "#E0FFFF";
+}
+
 #map {
   width:40%;
   height: 50%;
