@@ -4,6 +4,7 @@ html,body{
   padding:0px;
   height:100%;  
   font-family: 'Special Elite', cursive;
+  font-size: 20px;
   color: #4682B4;
 }
 
@@ -37,4 +38,10 @@ h2{
   width: 600px;    /*600px;*/
   height: 600px;
   /*position:absolute;*/
+}
+
+#discipline-selector{
+  margin:2px;
+  padding:6px;
+  display:inline-block;
 }

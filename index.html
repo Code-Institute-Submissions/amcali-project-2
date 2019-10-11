@@ -41,15 +41,15 @@
         <li class="nav-item dropdown" style="background-color: yellow;">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">MENU</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" href="#home">HOME</a>
+            <a class="dropdown-item" href="#about">ABOUT</a>
             <a class="dropdown-item" href="#what-is-uvi">WHAT IS UVI</a>
             <a class="dropdown-item" href="#uvi-around-world">UVI AROUND THE WORLD</a>
-            <a class="dropdown-item" href="#summary">CONCLUSION</a>
+            <a class="dropdown-item" href="#summary">SUMMARY</a>
           </div>
         </li>
       </ul>
 
-      <section class = "page" id = "home" style="height:700px; background-color:pink;">
+      <section class = "page" id = "about" style="min-height:700px; background-color:pink;">
       <div>
           <h2>About</h2>
           
@@ -62,7 +62,7 @@
           </p>
         </div>
       </section>
-      <section class = "page" id = "what-is-uvi" style="height:700px; background-color: orange;">
+      <section class = "page" id = "what-is-uvi" style="min-height:700px; background-color: orange;">
           <h2>What Is The UV Index?</h2>
           <p>
             The UVI is a measure of the level of UV radiation.
@@ -91,31 +91,53 @@
             UV radiation levels vary substantially with time and place. 
             The increased risk of UV damage to the skin and eye during a holiday in a sunny location is often underestimated.
             <br>
-            The graph below illustrates the changes in UV radiation levels with season and latitude. 
-            The closer the city is to equatorial regions, the higher the UV radiation levels.
-            Cities with similar latitude reveal similar UVI readings during different times of the year.
-            Maximal UV Index values are given for a range of cities in different countries, calculated for the 21st of each month.
+
           </p>
       </div>    
 
       </section>
       
-      <section class = "page" id = "uvi-around-world" style="height: 1500px; background-color: azure;">
+      <section class = "page" id = "uvi-around-world" style="min-height: 1500px; background-color: azure;">
 
       <h2>UV Index Readings In Different Cities</h2>
       <div>
-        Click on the different cities to view their illustrated UVI readings, and their locations on the global map for comparison.
-    
+        <p>
+            Graphical location and the time of the year have an impact on UV Index readings.
+            The map and graph below when used together will show how the UV Index readings vary when comparing different cities.
+        </p>
+        
+        <p>
+            The graph below illustrates the changes in UV radiation levels with season and latitude. 
+            Maximal UV Index values are given for a range of cities in different countries, calculated for the 21st of each month.        
+            Click on the different cities to view their illustrated UVI readings, and their locations on the global map for comparison.
+        </p>
+        
+        <h3>How To Use the Map and Graph</h3>
+        <ul>
+          <li>
+            <emphasis>Map: </emphasis> Click on a marker to see which country, city and latitude it is located on the map.
+          </li>
+          <li>
+            <emphasis>Graph: </emphasis> Using the city menu selector, click on the city/cities of choice(s) to view the UV Index readings.
+          </li>
+        </ul>
       </div>
       <div class="container" id="map"></div>
-      <div id="discipline-selector"></div>
+      
+      <div id="discipline-selector-instructions">Select city/cities of choice:</div>
+      <div id="discipline-selector"></div>    <!--displays selector menu for composite chart of cities' UV Index readings from Jan to Dec-->
       <div id ="line-graph" style="width:100%;"></div> <!--To display uv-index data of selected countries during different months --> 
       
  
       </section>
-      <section class = "page" id = "summary" style="height:600px; width:100%;">
+      <section class = "page" id = "summary" style="min-height:700px; width:100%;">
       <h2>Summary</h2>
-      
+      <div>
+      <p>
+        The closer the city is to equatorial regions, the higher the UV radiation levels.
+        Cities with similar latitude reveal similar UVI readings during different times of the year.
+      </p>
+      </div>
       </section>
          
     </div>
