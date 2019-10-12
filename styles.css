@@ -16,12 +16,13 @@ html,body{
 section{
   border:0;
   margin:0;
+  word-spacing:15px;
 }
 
-header, h1{
+h1{
   border: 0;
-  margin: 0;
-  padding: 8px;
+  margin-top: 4px;
+  padding: 6px;
   text-align: center;
   letter-spacing:4px;
   text-transform:uppercase;
@@ -33,22 +34,24 @@ p{
   margin-top: 2px;
   padding: 4px;
   letter-spacing: 1px;
+  font-size: 25px;
   font-weight:500;
 }
 
 h2{
   border:0;
-  margin: 2;
-  padding: 8px;
+  margin: 2px;
+  padding-top: 20px;
+  padding-bottom:20px;
   text-align: center;
-  background-color: #E0FFFF;
+  background-color: azure;
+  text-transform: uppercase;
+  font-weight:600;
   letter-spacing: 3px;
   
 }
 
-#about{
-  text-align: center;
-}
+
 
 #uv-video{
    display: flex;
@@ -81,7 +84,32 @@ h2{
 /*Small devices*/
 @media (max-width: 448px) {
 
+h1{
+  margin-top:10px;
+  padding-top:4px;
+  text-align: center;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  font-weight: 700;
+  font-size:150%;
 }
+
+
+
+  #about{
+    text-align: center;
+  }  
+
+  p{
+    margin-top: 2px;
+    padding: 4px;
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-weight:400;
+  }
+
+}
+  
   
 /*Medium devices*/
 @media (max-width: 991.98px) {
@@ -92,9 +120,13 @@ h2{
 /*Large devices*/
 @media (min-width: 991.99px) {
   
+  #about{
+    text-align:center;
+  }
+  
   #uv-video{
   height:500px;
   width:889px;
-}
+  }
   
 }
