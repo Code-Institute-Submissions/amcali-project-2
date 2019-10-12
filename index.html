@@ -20,9 +20,6 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
     <!-- end dependencies -->
 
-    <!--Axios CDN-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
-
     <!--CSS -->
     <link rel="stylesheet" href="styles.css" type="text/css"/>
 
@@ -100,15 +97,15 @@
             The media usually present a forecast of the maximum UV level for the following day.
           </p>
           
-      <div>
-          <h2>UV measurements</h2>
-          <p>
-            UV radiation levels vary substantially with time and place. 
-            The increased risk of UV damage to the skin and eye during a holiday in a sunny location is often underestimated.
-            <br>
-
-          </p>
-      </div>    
+          <div>
+              <h2>UV measurements</h2>
+              <p>
+                UV radiation levels vary substantially with time and place. 
+                The increased risk of UV damage to the skin and eye during a holiday in a sunny location is often underestimated.
+                <br>
+    
+              </p>
+          </div>    
 
       </section>
       
@@ -118,24 +115,16 @@
       <div>
         <p>
             Graphical location and the time of the year have an impact on UV Index readings.
-            The map and graph below when used together will show how the UV Index readings vary when comparing different cities.
+            The following graph illustrates the maximal UV index readings for selected cities on different months.
+            The map below displays the latitude of the selected cities.
         </p>
-        
-        <p>
-            The graph below illustrates the changes in UV radiation levels with season and latitude. 
-            Maximal UV Index values are given for a range of cities in different countries, calculated for the 21st of each month.        
-            Click on the different cities to view their illustrated UVI readings, and their locations on the global map for comparison.
-        </p>
-        
+     
         <h3>How To Use the Map and Graph</h3>
-        <ul>
-          <li>
-            <emphasis>Map: </emphasis> Click on a marker to see which country, city and latitude it is located on the map.
-          </li>
-          <li>
-            <emphasis>Graph: </emphasis> Using the city menu selector, click on the city/cities of choice(s) to view the UV Index readings.
-          </li>
-        </ul>
+        <p>
+            Select a city from the selection menu to view the UV Index readings and check the latitude on the map.
+        <br>    
+            Several cities may be selected simultaneously for comparing their latitudes and corresponding index readings.
+        </p>
       </div>
 
       
@@ -143,8 +132,7 @@
       <div id="discipline-selector"></div>    <!--displays selector menu for composite chart of cities' UV Index readings from Jan to Dec-->
       <div id ="line-graph" style="width:100%;"></div> <!--To display uv-index data of selected countries during different months --> 
       
-      <div class="container" id="map"></div> 
-      
+      <div id="map" class="container col-10"></div> 
       </section>
       <section id="summary" class="page" style="min-height:700px; width:100%;">
       <h2>Summary</h2>

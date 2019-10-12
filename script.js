@@ -235,11 +235,11 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYW1jYWxpIiwiYSI6ImNrMHl4ZXdzcDA4c3czY3BlcWttc
 
 // adding map from Mapbox
 let map = new mapboxgl.Map({
-  container: 'map', // #1 HTML container id
-  style: 'mapbox://styles/mapbox/streets-v9', // style URL
-  center: [0, 0], // #2 starting position as [lng, lat]
+  container: 'map', // referes to id of HTML div tag
+  style: 'mapbox://styles/mapbox/streets-v9', // Mapbox URL style
+  center: [0, 0], // coordinate format: [lng, lat]
   zoom: 0.3,
- });
+});
 
 
 // Save all the markers into an array
@@ -250,10 +250,10 @@ for (let p of cityArray) {
 
     // Place a marker for each place into created array
     let m = new mapboxgl.Marker()
-    .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
-    .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-    .setHTML(`'<h2>{$p.country}:</h2><h3>${p.city}</h3><p>${p.latReading}</p>'`))
-    .addTo(map);
+        .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML(`<h2>${p.country}:</h2><h3>${p.city}</h3><p>${p.latReading}</p>`))
+        .addTo(map);
 
     // add the created marker to the list of all markers
     long_lat_of_cities.push(m);
@@ -261,8 +261,7 @@ for (let p of cityArray) {
 }
 
 map.setRenderWorldCopies(false);
-// map.resize();
-map.dragPan.disable();
+map.dragPan.enable();
 
 
 /* The following is to enable markers on the map to appear with the graph line according 
@@ -303,3 +302,12 @@ function clearMarkers() {
     }
    long_lat_of_cities = [];
 }
+
+
+// function does not work to disable multiselect on select Menu when 'select all is highlighted'
+// $(document).on('click', '.dc-select-menu', function disableMultiselect (){
+//          
+//         if(choice == "Select all")
+//             return dc.selectMenu("#discipline-selector")
+//                     .multiple(false);
+// });
