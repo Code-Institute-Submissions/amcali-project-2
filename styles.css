@@ -23,11 +23,17 @@ header, h1{
   margin: 0;
   padding: 8px;
   text-align: center;
+  letter-spacing:4px;
+  text-transform:uppercase;
+  font-weight: 900;
+  font-size:200%;
 }
 
 p{
   margin-top: 2px;
   padding: 4px;
+  letter-spacing: 1px;
+  font-weight:500;
 }
 
 h2{
@@ -36,6 +42,19 @@ h2{
   padding: 8px;
   text-align: center;
   background-color: #E0FFFF;
+  letter-spacing: 3px;
+  
+}
+
+#about{
+  text-align: center;
+}
+
+#uv-video{
+   display: flex;
+   justify-content: flex-start;
+   flex-wrap: wrap;
+   margin: 0 auto;
 }
 
 #map {
@@ -57,4 +76,25 @@ h2{
   margin:2px;
   padding:6px;
   display:inline-block;
+}
+
+/*Small devices*/
+@media (max-width: 448px) {
+
+}
+  
+/*Medium devices*/
+@media (max-width: 991.98px) {
+
+}
+  
+
+/*Large devices*/
+@media (min-width: 991.99px) {
+  
+  #uv-video{
+  height:500px;
+  width:889px;
+}
+  
 }
