@@ -10,30 +10,19 @@
 /*Displaying active pages upon click of navigation bar drop down menu*/
 $(function() {
     
-    function initPageOne()
-    {
-    $("#about").click(function() {
-        $(".page").hide(); // hide all the other pages
-        $("#home").show(); // show the home page to user on click
-    })
 
-    $("#what-is-uvi").click(function() {
-        $(".page").hide();
-        $("#what-is-uvi").show();   
-    })
+    $('.page').hide();
+    $('#about').show();
 
-    $("#uvi-around-the-world").click(function() {
-        $(".page").hide();
-        $("#uvi-around-the-world").show();
-    })
 
-    $("#summary").click(function() {
-        $(".page").hide();
-        $("#summary").show();
-    })
-    
+    $(".dropdown-item").click(function(){
+        // extract out the value of data-dest attribute for the
+        // clicked link
+        let page = $(this).data('dest');
+        $('.page').hide();
+        $('#' + page).show();
+    })    
 
-}
 });  
 
  
@@ -53,20 +42,20 @@ $(function() {
                     {"country": "Greece", "city": "Heraklion", "color": "#B34D4D", "longitude": 25.1442, "latitude": 35.3387, "latReading": "35°N"},
                     {"country": "Japan", "city": "Tokyo", "color": "#809900", "longitude": 139.6503, "latitude": 35.6762, "latReading": "36°N"},
                     {"country": "Kenya", "city": "Nairobi", "color": "#E6B3B3", "longitude": -36.8219, "latitude": -1.2921, "latReading": "1°S"},
-                    {"city": "Antananarivo", "color": "#6680B3", "longitude": -47.5079, "latitude": -18.8792, "latReading": "19°S"},
-                    {"city": "Maputo", "color": "#66991A", "longitude": -32.5732, "latitude": -25.9692, "latReading": "26°S"},
-                    {"city": "Ulaanbaatar", "color": "#FF99E6", "longitude": 106.9057, "latitude": 47.8864, "latReading": "48°N"},
-                    {"city": "Wellington", "color": "#CCFF1A", "longitude": 174.7762, "latitude": -41.2865, "latReading": "42°S"},
-                    {"city": "Panama", "color": "#FF1A66", "longitude": -80.7821, "latitude": 8.5380, "latReading": "9°N"},
-                    {"city": "St Petersburg", "color": "#E6331A", "longitude": 30.3351, "latitude": 59.9343, "latReading": "60°N"},
-                    {"city": "Singapore", "color": "#33FFCC", "longitude": 103.8198, "latitude": 1.3521, "latReading": "1°N"},
-                    {"city": "Cape Town", "color": "#66994D", "longitude": 18.4241, "latitude": -33.9249, "latReading": "34°S"},
-                    {"city": "Palma de Mallorca", "color": "#B366CC", "longitude": 2.6502, "latitude": 39.5696, "latReading": "39°N"},
-                    {"city": "Colombo", "color": "#4D8000", "longitude": 79.8612, "latitude": 6.9271, "latReading": "13°N"},
-                    {"city": "Bangkok", "color": "#B33300", "longitude": 100.5018, "latitude": 13.7563, "latReading": "14°N"},
-                    {"city": "Los Angeles", "color": "#CC80CC", "longitude": -118.2437, "latitude": 34.0522, "latReading": "34°N"},
-                    {"city": "New York", "color": "#66664D", "longitude": -74.0060, "latitude": 40.7128, "latReading": "41°N"},
-                    {"city": "Hanoi", "color": "#991AFF", "longitude": 105.8342, "latitude": 21.0278, "latReading": "21°N"}
+                    {"country": "Madagascar", "city": "Antananarivo", "color": "#6680B3", "longitude": -47.5079, "latitude": -18.8792, "latReading": "19°S"},
+                    {"country": "Mozambique", "city": "Maputo", "color": "#66991A", "longitude": -32.5732, "latitude": -25.9692, "latReading": "26°S"},
+                    {"country": "Mongolia", "city": "Ulaanbaatar", "color": "#FF99E6", "longitude": 106.9057, "latitude": 47.8864, "latReading": "48°N"},
+                    {"country": "New Zealand", "city": "Wellington", "color": "#CCFF1A", "longitude": 174.7762, "latitude": -41.2865, "latReading": "42°S"},
+                    {"country": "Panama", "city": "Panama", "color": "#FF1A66", "longitude": -80.7821, "latitude": 8.5380, "latReading": "9°N"},
+                    {"country": "Russia", "city": "St Petersburg", "color": "#E6331A", "longitude": 30.3351, "latitude": 59.9343, "latReading": "60°N"},
+                    {"country": "Singapore", "city": "Singapore", "color": "#33FFCC", "longitude": 103.8198, "latitude": 1.3521, "latReading": "1°N"},
+                    {"country": "South Africa", "city": "Cape Town", "color": "#66994D", "longitude": 18.4241, "latitude": -33.9249, "latReading": "34°S"},
+                    {"country": "Spain", "city": "Palma de Mallorca", "color": "#B366CC", "longitude": 2.6502, "latitude": 39.5696, "latReading": "39°N"},
+                    {"country": "Sri Lanka", "city": "Colombo", "color": "#4D8000", "longitude": 79.8612, "latitude": 6.9271, "latReading": "13°N"},
+                    {"country": "Thailand", "city": "Bangkok", "color": "#B33300", "longitude": 100.5018, "latitude": 13.7563, "latReading": "14°N"},
+                    {"country": "USA", "city": "Los Angeles", "color": "#CC80CC", "longitude": -118.2437, "latitude": 34.0522, "latReading": "34°N"},
+                    {"country": "USA", "city": "New York", "color": "#66664D", "longitude": -74.0060, "latitude": 40.7128, "latReading": "41°N"},
+                    {"country": "Vietnam", "city": "Hanoi", "color": "#991AFF", "longitude": 105.8342, "latitude": 21.0278, "latReading": "21°N"}
                 ];  //declaring an array to use when drawing the composite chart, and generating information for contents of mapbox popup markers
 
 
@@ -300,11 +289,12 @@ function createmarker(place) {
         selectall = true;
     for (let p of cityArray) {
         if(p.city == place || selectall) {
-            // Place a marker for each place into created array
+            /* Place a marker for each place into created array based on 
+            longitude and latitude called from cityArray*/
             let m = new mapboxgl.Marker()
-            .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
+            .setLngLat({lng: p.longitude, lat: p.latitude})       
             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-            .setHTML(`'<h2>{$p.country}:</h2><h3>${p.city}</h3><p>${p.latReading}</p>'`))
+            .setHTML(`<h5>${p.country}:</h5><h6>${p.city}</h6><p>${p.latReading}</p>`))
             .addTo(map);
         
             // add the created marker to the list of all markers

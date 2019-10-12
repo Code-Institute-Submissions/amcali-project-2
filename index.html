@@ -41,15 +41,15 @@
         <li class="nav-item dropdown" style="background-color: yellow;">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">MENU</a>
           <div class="dropdown-menu">
-            <a class="dropdown-item"  href="#about">ABOUT</a>
-            <a class="dropdown-item" href="#what-is-uvi">WHAT IS UVI</a>
-            <a class="dropdown-item" href="#uvi-around-world">UVI AROUND THE WORLD</a>
-            <a class="dropdown-item" href="#summary">SUMMARY</a>
+            <a class="dropdown-item" data-dest="about" id="about-link"  href="#">ABOUT</a> <!--about the website-->
+            <a class="dropdown-item" data-dest="uvi-info" id="uvi-info-link" href="#">WHAT IS UVI</a>
+            <a class="dropdown-item" data-dest="uvi-map-chart" id="uvi-map-chart-link" href="#">UVI AROUND THE WORLD</a>
+            <a class="dropdown-item" data-dest="summary" id="summary-link" href="#">SUMMARY</a>
           </div>
         </li>
       </ul>
 
-      <section class = "page" id = "about" style="min-height:700px; background-color:pink;">
+      <section id="about" class="page" style="min-height:700px; background-color:pink;">
       <div>
           <h2>About</h2>
           
@@ -62,7 +62,7 @@
           </p>
         </div>
       </section>
-      <section class = "page" id = "what-is-uvi" style="min-height:700px; background-color: orange;">
+      <section id="uvi-info" class="page" style="min-height:700px; background-color: orange;">
           <h2>What Is The UV Index?</h2>
           <p>
             The UVI is a measure of the level of UV radiation.
@@ -97,7 +97,7 @@
 
       </section>
       
-      <section class = "page" id = "uvi-around-world" style="min-height: 1500px; background-color: azure;">
+      <section id="uvi-map-chart" class="page" style="min-height: 1500px; background-color: azure;">
 
       <h2>UV Index Readings In Different Cities</h2>
       <div>
@@ -131,7 +131,7 @@
       <div class="container" id="map"></div> 
       
       </section>
-      <section class = "page" id = "summary" style="min-height:700px; width:100%;">
+      <section id="summary" class="page" style="min-height:700px; width:100%;">
       <h2>Summary</h2>
       <div>
       <p>

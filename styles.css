@@ -44,6 +44,15 @@ h2{
   /*position:absolute;*/
 }
 
+/*For making amendments to mapbox popup */
+/*.mapboxgl-popup-content {*/
+  
+/*}*/
+
+/*.mapboxgl-popup-content-wrapper{*/
+  
+/*}*/
+
 #discipline-selector{
   margin:2px;
   padding:6px;
