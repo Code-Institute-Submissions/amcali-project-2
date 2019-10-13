@@ -14,8 +14,8 @@ The main aim of the website is to enable users via interaction with the present 
 
 The contents of the website have been divided into the following sections:
 
-⋅⋅- About
-⋅⋅⋅This section gives insight to what the website is about, and introduces the topic of the UV Index with a video.
+⋅⋅- About⋅⋅
+⋅⋅⋅This section gives insight to what the website is about, and introduces the topic of the UV Index with a video.⋅⋅⋅
 
 ⋅⋅- What is the UV Index
 ⋅⋅⋅This section covers an overview on the UV Index and what its measurements readings resemble.
