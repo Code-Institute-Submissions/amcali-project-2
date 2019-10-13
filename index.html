@@ -31,12 +31,12 @@
     <title>Ultra Violet Radiation - UV Index Readings</title>
   </head>
   <body>
-    <div class = "container-fluid">
+    <div class = "container-fluid mt-0 mb-4">
 
       <!--nav item -->
-      <ul class="nav nav-tabs fixed-top">
-        <li class="nav-item dropdown" style="background-color: yellow;">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">MENU</a>
+      <ul class="nav nav-tabs fixed-top mt-2">
+        <li class="nav-item dropdown" style="background-color: CornflowerBlue;">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
           <div class="dropdown-menu">
             <a class="dropdown-item" data-dest="about" id="about-link"  href="#">ABOUT</a> <!--about the website-->
             <a class="dropdown-item" data-dest="uvi-info" id="uvi-info-link" href="#">WHAT IS UVI</a>
@@ -46,7 +46,7 @@
         </li>
       </ul>
       
-      <header class="mt-6 b-0 pt-8"><h1>The UV Index (UVI)</h1></header>
+      <header class="mt-0 b-0 p-4"><h1>The UV Index (UVI)</h1></header>
 
       <section id="about" class="page" style="min-height:700px;">
       <div>
@@ -75,7 +75,7 @@
       </section>
       
       <section id="uvi-info" class="page" style="min-height:700px;">
-          <h2>What Is The UV Index?</h2>
+          <h2 class="mb-2">What Is The UV Index?</h2>
           <p>
             The UVI is a measure of the level of UV radiation.
             <br>
@@ -83,27 +83,64 @@
             The UVI is an important vehicle to alert people about the need to use sun protection.
           </p>
           
-          <h2>What Does The UV Index Mean?</h2>
-          
-          <!-- readings of UV Index goes here -->
+          <h2>What Do The UV Index Readings Mean?</h2>
           
           <p>
-            The levels of UV radiation and therefore the values of the index vary throughout the day. 
+            UV radiation and subsequently the values of the index vary throughout the day. 
             <br>
             In reporting the UVI, most emphasis is placed on the maximum UV level on a given day. 
             This occurs during the four-hour period around solar noon. 
             <br>
             Depending on geographical location and whether daylight saving time is applied, solar noon takes place between noon and 2 p.m. 
             The media usually present a forecast of the maximum UV level for the following day.
+            <br>
+            UVI values are grouped into exposure categories:
           </p>
+          
+            <table class="table" style="width:75%; color:black; font-weight:300; text-align:center;">
+              <thead>
+                <tr>
+                  <th scope="col">EXPOSURE CATEGORY</th>
+                  <th scope="col">UVI RANGE</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                 <th></th>                  
+                 <th id="table-desc"><i>UV radiation exposure categories</i></th>
+                </tr>
+              </tfoot>          
+              <tbody>
+                <tr style="background-color:#a0ce00;">
+                  <th scope="row">LOW</th>
+                  <td>&#60;2</td>
+                </tr>
+                <tr style="background-color:#f7e400;">
+                  <th scope="row">MODERATE</th>
+                  <td>3 TO 5</td>
+                </tr>
+                <tr style="background-color:#f85900;">
+                  <th scope="row">HIGH</th>
+                  <td>6 TO 7</td>
+                </tr>
+                <tr style="background-color:#d8001d;">
+                  <th scope="row">VERY HIGH</th>
+                  <td>8 TO 10</td>
+                </tr>  
+                <tr style="background-color:#998cff;">
+                  <th scope="row">EXTREME</th>
+                  <td>11+</td>
+                </tr>
+              </tbody>
+            </table>
           
           <div>
               <h2>UV measurements</h2>
               <p>
                 UV radiation levels vary substantially with time and place. 
-                The increased risk of UV damage to the skin and eye during a holiday in a sunny location is often underestimated.
+                The increased risk of UV damage to the skin and eye during 
+                a holiday in a sunny location is often underestimated.
                 <br>
-    
               </p>
           </div>    
 
@@ -130,9 +167,10 @@
       
       <div id="discipline-selector-instructions">Select city/cities of choice:</div>
       <div id="discipline-selector"></div>    <!--displays selector menu for composite chart of cities' UV Index readings from Jan to Dec-->
+      <div id="map" class="container col-10"></div> 
       <div id ="line-graph" style="width:100%;"></div> <!--To display uv-index data of selected countries during different months --> 
       
-      <div id="map" class="container col-10"></div> 
+
       </section>
       <section id="summary" class="page" style="min-height:700px; width:100%;">
       <h2>Summary</h2>
@@ -147,8 +185,8 @@
     </div>
 
     
-    <footer class="fixed-bottom" style="background-color: yellow; height: 45px;">
-    </footer>
+    <!--<footer class="fixed-bottom" style="background-color: white; height: 45px;">-->
+    <!--</footer>-->
   
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
