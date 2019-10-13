@@ -35,7 +35,7 @@ The contents of the website have been divided into the following sections:
 *Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 This website is for any individual who wishes to have insight on the UV Index through some interactive mediums.
-The original wireframe to the website project may be found [here]
+The original wireframe to the website project may be found [here](https://github.com/amcali/project-2/issues/1#issue-506329084).
 
 _- As a user type, I want to perform an action, so that I can achieve a goal._
 
