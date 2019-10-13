@@ -35,18 +35,18 @@
 
       <!--nav item -->
       <ul class="nav nav-tabs fixed-top mt-2">
-        <li class="nav-item dropdown" style="background-color: CornflowerBlue;">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"></a>
+        <li class="nav-item dropdown" style="background-color: #D1E6E8;">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:#4682B4;"></a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" data-dest="about" id="about-link"  href="#">ABOUT</a> <!--about the website-->
-            <a class="dropdown-item" data-dest="uvi-info" id="uvi-info-link" href="#">WHAT IS UVI</a>
-            <a class="dropdown-item" data-dest="uvi-map-chart" id="uvi-map-chart-link" href="#">UVI AROUND THE WORLD</a>
-            <a class="dropdown-item" data-dest="summary" id="summary-link" href="#">SUMMARY</a>
+            <a class="dropdown-item" data-dest="about" id="about-link"  href="#" style="color: #4682B4;">ABOUT</a> <!--about the website-->
+            <a class="dropdown-item" data-dest="uvi-info" id="uvi-info-link" href="#" style="color: #4682B4;">WHAT IS UVI</a>
+            <a class="dropdown-item" data-dest="uvi-map-chart" id="uvi-map-chart-link" href="#" style="color: #4682B4;">UVI AROUND THE WORLD</a>
+            <a class="dropdown-item" data-dest="summary" id="summary-link" href="#" style="color: #4682B4;">SUMMARY</a>
           </div>
         </li>
       </ul>
       
-      <header class="mt-0 b-0 p-4"><h1>The UV Index (UVI)</h1></header>
+      <header class="mt-0 b-0 pt-4 pl-2 pr-2 pb-0"><h1>The UV Index (UVI)</h1></header>
 
       <section id="about" class="page" style="min-height:700px;">
       <div>
@@ -76,15 +76,17 @@
       
       <section id="uvi-info" class="page" style="min-height:700px;">
           <h2 class="mb-2">What Is The UV Index?</h2>
+          <div>
           <p>
             The UVI is a measure of the level of UV radiation.
             <br>
             The values of the index range from zero upward - the higher the UVI, the greater the potential for damage to the skin and eye, and the less time it takes for harm to occur.
             The UVI is an important vehicle to alert people about the need to use sun protection.
           </p>
+          </div>
           
           <h2>What Do The UV Index Readings Mean?</h2>
-          
+          <div>
           <p>
             UV radiation and subsequently the values of the index vary throughout the day. 
             <br>
@@ -133,7 +135,7 @@
                 </tr>
               </tbody>
             </table>
-          
+          </div>
           <div>
               <p>
                 UV radiation levels vary substantially with time and place. 
@@ -148,45 +150,62 @@
       
       <section id="uvi-map-chart" class="page" style="min-height: 1500px;">
 
-      <h2>UV Index Readings In Different Cities</h2>
-      <div>
-        <p>
-            Graphical location and the time of the year have an impact on UV Index readings.
-            The following graph illustrates the maximal UV index readings for selected cities on different months.
-            The map below displays the latitude of the selected cities.
-        </p>
-     
-        <h3>How To Use the Map and Graph</h3>
-        <p>
-            Select a city from the selection menu to view the UV Index readings and check the latitude on the map.
-        <br>    
-            Several cities may be selected simultaneously for comparing their latitudes and corresponding index readings.
-        </p>
-      </div>
-
+        <h2>UV Index Readings In Different Cities</h2>
+        <div>
+          <p>
+              Graphical location and the time of the year have an impact on UV Index readings.
+              The following graph illustrates the maximal UV index readings for selected cities on different months.
+              The map below displays the latitude of the selected cities.
+          </p>
+       
+          <h4>How To Use the Map and Graph</h4>
+          <p>
+              Select a city from the selection menu to view the UV Index readings and check the latitude on the map.
+          <br>    
+              Several cities may be selected simultaneously for comparing their latitudes and corresponding index readings.
+          </p>
+        </div>
       
-      <div id="discipline-selector-instructions">Select city/cities of choice:</div>
-      <div id="discipline-selector"></div>    <!--displays selector menu for composite chart of cities' UV Index readings from Jan to Dec-->
-      <div id="map" class="container col-10"></div> 
-      <div id ="line-graph" style="width:100%;"></div> <!--To display uv-index data of selected countries during different months --> 
-      
-
+        <div><span>Select city/cities of choice:</span></div>
+        <div id="discipline-selector"></div>    <!--displays selector menu for composite chart of cities' UV Index readings from Jan to Dec-->
+        <div id="map" class="container col-10"></div> 
+        <div id ="line-graph" style="width:100%;"></div> <!--To display uv-index data of selected countries during different months --> 
       </section>
+      
       <section id="summary" class="page" style="min-height:700px; width:100%;">
       <h2>Summary</h2>
       <div>
       <p>
+        Latitude if one of other factors that influence UV radiation levels.
+        <br>
         The closer the city is to equatorial regions, the higher the UV radiation levels.
+        <br>
         Cities with similar latitude reveal similar UVI readings during different times of the year.
       </p>
       </div>
+        <div style="width:80%;">
+          <span>Other factors that influence UV radiation levels include:</span>
+        	<dl>
+          	<dt>Sun Elevation:</dt>
+          	  <dd>The higher the sun in the sky,the higher the UV radiation level.</dd>
+          	<dt>Latitude:</dt>
+          	  <dd>The closer to equatorial regions, the higher the UV radiation levels.</dd>
+          	<dt>Altitude:</dt>
+          	  <dd>At higher altitudes, a thinner atmosphere absorbs less UV radiation.</dd>
+          	<dt>Ozone:</dt>
+          	  <dd>Ozone absorbs some of the UV radiation that would otherwise reach the Earth’s surface.</dd>
+        	</dl>
+      	</div>
+      <div>
+        <span>
+        	More information on the UV Index may be found on the 
+        	<a href="https://www.who.int/uv/en/" target="_blank">World Health Organisation (WHO)</a> website.
+        </span>
+      </div>
       </section>
          
-    </div>
+    </div> <!--end of container-fluid-->
 
-    
-    <!--<footer class="fixed-bottom" style="background-color: white; height: 45px;">-->
-    <!--</footer>-->
   
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

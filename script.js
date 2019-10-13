@@ -59,6 +59,81 @@ let cityArray = [
             ];  
 
 
+/*Displaying the map */
+mapboxgl.accessToken = 'pk.eyJ1IjoiYW1jYWxpIiwiYSI6ImNrMHl4ZXdzcDA4c3czY3BlcWttc2k3YzkifQ.apM6qnRNX442RufrpJjbyA';
+
+
+// adding map from Mapbox
+let map = new mapboxgl.Map({
+  container: 'map', // referes to id of HTML div tag
+  style: 'mapbox://styles/mapbox/streets-v9', // Mapbox URL style
+  center: [0, 0], // coordinate format: [lng, lat]
+  zoom: 0.3,
+});
+
+
+// Save all the markers into an array
+// to be used for later according to drop down selection
+let long_lat_of_cities = [];
+
+for (let p of cityArray) {
+
+    // Place a marker for each place into created array
+    let m = new mapboxgl.Marker()
+        .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
+        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+        .setHTML(`<h2>${p.country}:</h2><h3>${p.city}</h3><p>${p.latReading}</p>`))
+        .addTo(map);
+
+    // add the created marker to the list of all markers
+    long_lat_of_cities.push(m);
+
+}
+
+map.setRenderWorldCopies(false);
+map.dragPan.enable();
+
+
+/* The following is to enable markers on the map to appear with the graph line according 
+to the city selected from the select menu*/
+
+$(document).on('change', '.dc-select-menu', function () {
+    clearMarkers();
+    $( ".dc-select-menu option:selected" ).each(function() {
+      createmarker($( this ).text());
+    });
+});
+
+function createmarker(place) {
+    let selectall = false;
+    if(place == "Select all")
+        selectall = true;
+    for (let p of cityArray) {
+        if(p.city == place || selectall) {
+            /* Place a marker for each place into created array based on 
+            longitude and latitude called from cityArray*/
+            let m = new mapboxgl.Marker()
+            .setLngLat({lng: p.longitude, lat: p.latitude})       
+            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
+            .setHTML(`<h5>${p.country}:</h5><h6>${p.city}</h6><p>${p.latReading}</p>`))
+            .addTo(map);
+        
+            // add the created marker to the list of all markers
+            long_lat_of_cities.push(m);
+            if(!selectall)
+                return;
+        }
+    }
+}
+
+function clearMarkers() {
+    for(let m of long_lat_of_cities) {
+        m.remove();
+    }
+   long_lat_of_cities = [];
+}
+
+
 /*Creating the Composite Chart*/ 
 queue()
 
@@ -213,95 +288,8 @@ function show_line_graphs(transactionCrossFilter){
 
 }  //end of show_line_graphs function
 
-
-
-// $( "#dc-select-menu" )
-//   .change(function() {
-//     console.log("entered");
-//     clearmarker();
-//     var str = "";
-//     $( "#dc-select-menu option:selected" ).each(function() {
-//       str += $( this ).text() + " ";
-//       createmarker($( this ).text());
-      
-//     });
-//     $( "#test" ).text( str );
-//   })
-//   .trigger( "change" );
   
-/*Displaying the map */
-mapboxgl.accessToken = 'pk.eyJ1IjoiYW1jYWxpIiwiYSI6ImNrMHl4ZXdzcDA4c3czY3BlcWttc2k3YzkifQ.apM6qnRNX442RufrpJjbyA';
 
-
-// adding map from Mapbox
-let map = new mapboxgl.Map({
-  container: 'map', // referes to id of HTML div tag
-  style: 'mapbox://styles/mapbox/streets-v9', // Mapbox URL style
-  center: [0, 0], // coordinate format: [lng, lat]
-  zoom: 0.3,
-});
-
-
-// Save all the markers into an array
-// to be used for later according to drop down selection
-let long_lat_of_cities = [];
-
-for (let p of cityArray) {
-
-    // Place a marker for each place into created array
-    let m = new mapboxgl.Marker()
-        .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
-        .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-        .setHTML(`<h2>${p.country}:</h2><h3>${p.city}</h3><p>${p.latReading}</p>`))
-        .addTo(map);
-
-    // add the created marker to the list of all markers
-    long_lat_of_cities.push(m);
-
-}
-
-map.setRenderWorldCopies(false);
-map.dragPan.enable();
-
-
-/* The following is to enable markers on the map to appear with the graph line according 
-to the city selected from the select menu*/
-
-$(document).on('change', '.dc-select-menu', function () {
-    clearMarkers();
-    $( ".dc-select-menu option:selected" ).each(function() {
-      createmarker($( this ).text());
-    });
-});
-
-function createmarker(place) {
-    let selectall = false;
-    if(place == "Select all")
-        selectall = true;
-    for (let p of cityArray) {
-        if(p.city == place || selectall) {
-            /* Place a marker for each place into created array based on 
-            longitude and latitude called from cityArray*/
-            let m = new mapboxgl.Marker()
-            .setLngLat({lng: p.longitude, lat: p.latitude})       
-            .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-            .setHTML(`<h5>${p.country}:</h5><h6>${p.city}</h6><p>${p.latReading}</p>`))
-            .addTo(map);
-        
-            // add the created marker to the list of all markers
-            long_lat_of_cities.push(m);
-            if(!selectall)
-                return;
-        }
-    }
-}
-
-function clearMarkers() {
-    for(let m of long_lat_of_cities) {
-        m.remove();
-    }
-   long_lat_of_cities = [];
-}
 
 
 // function does not work to disable multiselect on select Menu when 'select all is highlighted'
