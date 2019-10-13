@@ -10,6 +10,27 @@ The ultimate aim of the website is to give brief insight to the website user on 
 The main aim of the website is to enable users via interaction with the present multimedia (video), map and chart to gain an understanding on a minor aspect of the UV Index (UVI).
 
 
+
+## UX
+
+*Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
+
+This website is for any individual who wishes to have insight on the UV Index through some interactive mediums.
+The original wireframe to the website project may be found [here](https://github.com/amcali/project-2/issues/1#issue-506329084 "Project 2 Wireframe").
+
+
+The following User Story Scenarios, will walkthrough the purpose of each webpage and how it is used:
+- 1. As a first time user, one would visit the About (Home) page, so that they may understand the purpose of the website.
+- 2. As a first time user with minimal or no understanding about ultraviolet rays, one would view the video on the About page so to get brief insight on the UV Rays and UV Index topic.
+- 3. As a new user who wishes to explore the menu contents at a glance, one would view the option stating "What is the UVI" to get a quick understanding of the website topic.
+- 4. As a user who wants further understanding on the UVI, one would visit the menu page "UVI Around THe World", so to gain further understanding on what the webpage pertains to, and to explore the topic.
+- 5. As new a user who dived into the webpage and viewed the map and chart, one would end up reading the content on the webpage, so as to understand how the map and chart work hand-in-hand.
+- 6. As a user who wishes to understand the purpose of the website contents in a nutshell, one would visit the "Summary" webpage, so as to understand how the other webpages' contents compliment one another and have an option to access further information to another website.
+
+
+
+## Features
+
 The contents of the website have been divided into the following sections:
 
 - __About__
@@ -29,27 +50,6 @@ The contents of the website have been divided into the following sections:
     As the factual information and UV index readings were sourced from the [World Health Organisation (WHO)](https://www.who.int/ "World Health Organisation"), this section not only summarises what the previous section was resembling with graphical readings, but also gives the user the option to seek more information on the topic from the WHO website.
 
 
-
-## UX
-
-*Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
-This website is for any individual who wishes to have insight on the UV Index through some interactive mediums.
-The original wireframe to the website project may be found [here](https://github.com/amcali/project-2/issues/1#issue-506329084).
-
-_- As a user type, I want to perform an action, so that I can achieve a goal._
-
-The following User Story Scenarios, will walkthrough the purpose of each webpage and how it is used:
-- 1. As a first time user, one would visit the About (Home) page, so that they may understand the purpose of the website.
-- 2. As a first time user with minimal or no understanding about ultraviolet rays, one would view the video on the About page so to get brief insight on the UV Rays and UV Index topic.
-- 3. As a new user who wishes to explore the menu contents at a glance, one would view the option stating "What is the UVI" to get a quick understanding of the website topic.
-- 4. As a user who wants further understanding on the UVI, one would visit the menu page "UVI Around THe World", so to gain further understanding on what the webpage pertains to, and to explore the topic.
-- 5. As new a user who dived into the webpage and viewed the map and chart, one would end up reading the content on the webpage, so as to understand how the map and chart work hand-in-hand.
-- 6. As a user who wishes to understand the purpose of the website contents in a nutshell, one would visit the "Summary" webpage, so as to understand how the other webpages' contents compliment one another and have an option to access further information to another website.
-
-## Features
-
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
 
 ### Existing Features
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
