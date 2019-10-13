@@ -30,9 +30,9 @@ $(function() {
 and generating information for contents of mapbox popup markers*/
 let cityArray = [
                 {"country": "Argentine", "city": "Buenos Aires", "color": "Aqua", "longitude": -58.3816, "latitude": -34.6037, "latReading": "35°S"},
-                {"country": "Australia", "city": "Darwin", "color": '#FFB399', "longitude": 130.8456, "latitude": -12.4634, "latReading": "13°S"},
+                {"country": "Australia", "city": "Darwin", "color": "PeachPuff", "longitude": 130.8456, "latitude": -12.4634, "latReading": "13°S"},
                 {"country": "Australia", "city": "Melbourne", "color": '#FF33FF', "longitude": 144.9631, "latitude": -37.8136, "latReading": "37°S"},
-                {"country": "Australia", "city": "Sydney", "color": '#FFFF99', "longitude": 151.2093, "latitude": -33.8688, "latReading": "34°S"},
+                {"country": "Australia", "city": "Sydney", "color": "LightBlue", "longitude": 151.2093, "latitude": -33.8688, "latReading": "34°S"},
                 {"country": "Brazil", "city": "Rio de Janerio", "color": '#00B3E6', "longitude": -43.1729, "latitude": -22.9068, "latReading": "23°S"},
                 {"country": "Canada", "city": "Vancouver", "color": "Aquamarine", "longitude": -123.1207, "latitude": 49.2827, "latReading": "49°N"},
                 {"country": "Cuba", "city": "Havana", "color": '#3366E6', "longitude": -82.3666, "latitude": 23.1136, "latReading": "23°N"},
@@ -49,13 +49,13 @@ let cityArray = [
                 {"country": "Panama", "city": "Panama", "color": "#FF1A66", "longitude": -80.7821, "latitude": 8.5380, "latReading": "9°N"},
                 {"country": "Russia", "city": "St Petersburg", "color": "DarkKhaki", "longitude": 30.3351, "latitude": 59.9343, "latReading": "60°N"},
                 {"country": "Singapore", "city": "Singapore", "color": "DarkTurquoise", "longitude": 103.8198, "latitude": 1.3521, "latReading": "1°N"},
-                {"country": "South Africa", "city": "Cape Town", "color": "#66994D", "longitude": 18.4241, "latitude": -33.9249, "latReading": "34°S"},
-                {"country": "Spain", "city": "Palma de Mallorca", "color": "#B366CC", "longitude": 2.6502, "latitude": 39.5696, "latReading": "39°N"},
-                {"country": "Sri Lanka", "city": "Colombo", "color": "#4D8000", "longitude": 79.8612, "latitude": 6.9271, "latReading": "13°N"},
-                {"country": "Thailand", "city": "Bangkok", "color": "#B33300", "longitude": 100.5018, "latitude": 13.7563, "latReading": "14°N"},
+                {"country": "South Africa", "city": "Cape Town", "color": "DimGray", "longitude": 18.4241, "latitude": -33.9249, "latReading": "34°S"},
+                {"country": "Spain", "city": "Palma de Mallorca", "color": "DodgerBlue", "longitude": 2.6502, "latitude": 39.5696, "latReading": "39°N"},
+                {"country": "Sri Lanka", "city": "Colombo", "color": "Gold", "longitude": 79.8612, "latitude": 6.9271, "latReading": "13°N"},
+                {"country": "Thailand", "city": "Bangkok", "color": "GoldenRod", "longitude": 100.5018, "latitude": 13.7563, "latReading": "14°N"},
                 {"country": "USA", "city": "Los Angeles", "color": "#CC80CC", "longitude": -118.2437, "latitude": 34.0522, "latReading": "34°N"},
-                {"country": "USA", "city": "New York", "color": "#66664D", "longitude": -74.0060, "latitude": 40.7128, "latReading": "41°N"},
-                {"country": "Vietnam", "city": "Hanoi", "color": "#991AFF", "longitude": 105.8342, "latitude": 21.0278, "latReading": "21°N"}
+                {"country": "USA", "city": "New York", "color": "LimeGreen", "longitude": -74.0060, "latitude": 40.7128, "latReading": "41°N"},
+                {"country": "Vietnam", "city": "Hanoi", "color": "SandyBrown", "longitude": 105.8342, "latitude": 21.0278, "latReading": "21°N"}
             ];  
 
 
