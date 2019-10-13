@@ -15,15 +15,19 @@ The main aim of the website is to enable users via interaction with the present 
 The contents of the website have been divided into the following sections:
 
 - __About__
+    
     This section gives insight to what the website is about, and introduces the topic of the UV Index with a video.
     
 - __What is the UV Index__
+    
     This section covers an overview on the UV Index and what its measurements readings resemble.
 
-- **UV Index Readings Around the Wold
+- __UV Index Readings Around the Wold__
+
     Twenty-seven cities had been presented with their map locations showing their latitude readings, and a composite chart illustrating each city's monthly UV index readings. This is to give the website user an opportunity to interact with the map and chart to compare different cities' latitudes versus their UV index readings.
 
-- Summary
+- __Summary__
+
     As the factual information and UV index readings were sourced from the [World Health Organisation (WHO)](https://www.who.int/ "World Health Organisation"), this section not only summarises what the previous section was resembling with graphical readings, but also gives the user the option to seek more information on the topic from the WHO website.
 
 
