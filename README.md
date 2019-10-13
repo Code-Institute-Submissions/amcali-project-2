@@ -1,7 +1,5 @@
 # The UV Index
 
-*One or two paragraphs providing an overview of your project.
-*Essentially, this part is your sales pitch.
 
 The topic on the UV or matters pertaining to it may be merely understood by many individuals. 
 Most matters which cover the topic would relate to the health hazards which derive from the matter.
@@ -9,7 +7,7 @@ What actually creates UV rays may not be well understood.
 Hence, this project is covering a sub topic on the UV: the UV Index.
 The ultimate aim of the website is to give brief insight to the website user on the UV Index readings, and cover on one of the influences of UV Rays: the earth's latitude.
 
-The main aim of the website is to enable users via interaction with the present multimedia (video), map and chart to gain an understanding on a minor aspect of the UV Index.
+The main aim of the website is to enable users via interaction with the present multimedia (video), map and chart to gain an understanding on a minor aspect of the UV Index (UVI).
 
 
 The contents of the website have been divided into the following sections:
@@ -31,6 +29,7 @@ The contents of the website have been divided into the following sections:
     As the factual information and UV index readings were sourced from the [World Health Organisation (WHO)](https://www.who.int/ "World Health Organisation"), this section not only summarises what the previous section was resembling with graphical readings, but also gives the user the option to seek more information on the topic from the WHO website.
 
 
+
 ## UX
 
 *Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
@@ -38,10 +37,15 @@ The contents of the website have been divided into the following sections:
 This website is for any individual who wishes to have insight on the UV Index through some interactive mediums.
 The original wireframe to the website project may be found [here]
 
-In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
-- As a user type, I want to perform an action, so that I can achieve a goal.
+_- As a user type, I want to perform an action, so that I can achieve a goal._
 
-This section is also where you would share links to any wireframes, mockups, diagrams etc. that you created as part of the design process. These files should themselves either be included in the project itself (in an separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser.
+The following User Story Scenarios, will walkthrough the purpose of each webpage and how it is used:
+- 1. As a first time user, one would visit the About (Home) page, so that they may understand the purpose of the website.
+- 2. As a first time user with minimal or no understanding about ultraviolet rays, one would view the video on the About page so to get brief insight on the UV Rays and UV Index topic.
+- 3. As a new user who wishes to explore the menu contents at a glance, one would view the option stating "What is the UVI" to get a quick understanding of the website topic.
+- 4. As a user who wants further understanding on the UVI, one would visit the menu page "UVI Around THe World", so to gain further understanding on what the webpage pertains to, and to explore the topic.
+- 5. As new a user who dived into the webpage and viewed the map and chart, one would end up reading the content on the webpage, so as to understand how the map and chart work hand-in-hand.
+- 6. As a user who wishes to understand the purpose of the website contents in a nutshell, one would visit the "Summary" webpage, so as to understand how the other webpages' contents compliment one another and have an option to access further information to another website.
 
 ## Features
 
