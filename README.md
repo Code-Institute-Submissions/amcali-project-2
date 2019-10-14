@@ -52,8 +52,11 @@ The contents of the website have been divided into the following sections:
 
 
 ### Existing Features
-- Feature 1 - allows users X to achieve Y, by having them fill out Z
-- ...
+
+The following features are found in the "UV Index Around the World" page:
+- Selector Menu of Cities - allows users X to achieve Y, by having them fill out Z
+- Map - 
+- Composite Chart - 
 
 For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
 
