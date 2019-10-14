@@ -70,15 +70,28 @@ The map may be considered to be colour coded along the latitudes to give the use
 
 ### Features Left to Implement
 The following features are to be for future:
-- UVI Forecast Readings: 
-- Developing the data revealed from the composite chart:
+- UVI Forecast Readings: This feature would be a means of enhancing the user's interaction options for realistic insight on UVI readings around the world.
+- Developing the data revealed from the composite chart: The user would be given an option to work with interactive charts that show the data from different aspects. One of them being highest and lowest UVI readings from top three and bottom three cities respectively.
 
 ## Technologies Used
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
+- [HTML](https://getbootstrap.com/)
+    - The project uses **Bootstrap** as the user interaction framework
+- [CSS](https://getbootstrap.com/)
+    - The project uses **Bootstrap** as the user interaction framework  
+- [Bootstrap](https://getbootstrap.com/)
+    - The project uses **Bootstrap** as the UI framework and to structure the layout of the featured elements on the website.
+- [JavaScript](https://getbootstrap.com/)
+    - The project uses **JavaScript** as the language to create some of the interaction and events between the features    
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
+- [DC Charts](https://getbootstrap.com/)
+    - The project uses **Bootstrap** as the user interaction framework
+- [Mapbox](https://getbootstrap.com/)
+    - The project uses **Bootstrap** as the user interaction framework    
+
 
 
 ## Testing
