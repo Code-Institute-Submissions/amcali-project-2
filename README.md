@@ -9,6 +9,8 @@ The ultimate aim of the website is to give brief insight to the website user on 
 
 The main aim of the website is to enable users via interaction with the present multimedia (video), map and chart to gain an understanding on a minor aspect of the UV Index (UVI).
 
+The link to the project may be found [here.](https://amcali.github.io/project-2/)
+
 
 
 ## UX
@@ -96,17 +98,47 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 ## Testing
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+Manual testing was conducted throughout the development of this project, the following types of test scenarios were conducted:
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+1. Navigation Drop Down Menu:
+    1. Click on the Navigation menu and a drop down of the available webpages are visible for user selection: About; What is UVI; UVI Around the World; Summary.
+    2. Click on each of the navigation drop down menu items, and find that only the respective webpage will appear.
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+2. Video:
+    1. Open the website link to view the "About" page appear as the homepage.
+    2. Click on the youtube video link, and the video succesfully plays.
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
+3. Anchor Links:
+    1. Open either the "About" or "Summary" pages, and find the underlined hyperlinks for "Trinidad and Tobago Meterological Service" and "World Health Organisation (WHO)" open to the respective organisations' webpages in an external web browser.
+
+4. Anchor Links:
+    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
+    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
+
+5. Menu Selector:
+    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
+    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
     3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+    4. Try to submit the form with all inputs valid and verify that a success message appears.   
+
+4. __Map__:
+    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
+    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
+    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
+    4. Try to submit the form with all inputs valid and verify that a success message appears.    
+
+5. __Composite Chart__:
+    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
+    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
+    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
+    4. Try to submit the form with all inputs valid and verify that a success message appears.    
+
+6. __Mobile Responsive__:
+    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
+    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
+    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
+    4. Try to submit the form with all inputs valid and verify that a success message appears.    
+
 
 In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
 
