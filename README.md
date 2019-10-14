@@ -1,7 +1,7 @@
 # The UV Index
 
 
-The topic on the UV or matters pertaining to it may be merely understood by many individuals. 
+The topic of Ultra Voilet Rays (UV Rays) or matters pertaining to it may be merely understood by many individuals. 
 Most matters which cover the topic would relate to the health hazards which derive from the matter.
 What actually creates UV rays may not be well understood.
 Hence, this project is covering a sub topic on the UV: the UV Index.
@@ -78,19 +78,19 @@ The following features are to be for future:
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
 - [HTML](https://getbootstrap.com/)
-    - The project uses **Bootstrap** as the user interaction framework
+    - The project uses **HTML** to create the content of the web pages.
 - [CSS](https://getbootstrap.com/)
-    - The project uses **Bootstrap** as the user interaction framework  
+    - The project uses **CSS** to style and modify some of the webpage elements.
 - [Bootstrap](https://getbootstrap.com/)
-    - The project uses **Bootstrap** as the UI framework and to structure the layout of the featured elements on the website.
+    - The project uses **Bootstrap** as the UI framework and for structuring and styling the layout of the featured elements on the website.
 - [JavaScript](https://getbootstrap.com/)
-    - The project uses **JavaScript** as the language to create some of the interaction and events between the features    
+    - The project uses **JavaScript** as the language to create some of the interaction and events between the features.    
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
-- [DC Charts](https://getbootstrap.com/)
-    - The project uses **Bootstrap** as the user interaction framework
-- [Mapbox](https://getbootstrap.com/)
-    - The project uses **Bootstrap** as the user interaction framework    
+- [Crossfilter & DC Charts](https://dc-js.github.io/dc.js/docs/html/dc.html)
+    - The project uses **JavaScript Crossfilter and DC Charts** to create the composite chart and menu selector.
+- [Mapbox](https://www.mapbox.com/)
+    - The project uses **Mapbox** to create the map.    
 
 
 
