@@ -43,7 +43,7 @@ The contents of the website have been divided into the following sections:
 
 - __UV Index Readings Around the Wold__
 
-    Twenty-seven cities had been presented with their map locations showing their latitude readings, and a composite chart illustrating each city's monthly UV index readings. This is to give the website user an opportunity to interact with the map and chart to compare different cities' latitudes versus their UV index readings.
+    27 cities had been presented with their map locations showing their latitude readings, and a composite chart illustrating each city's monthly UVI readings. This is to give the website user an opportunity to interact with the map and chart to compare different cities' latitudes versus their UVI readings.
 
 - __Summary__
 
@@ -54,16 +54,24 @@ The contents of the website have been divided into the following sections:
 ### Existing Features
 
 The following features are found in the "UV Index Around the World" page:
-- Selector Menu of Cities - allows users X to achieve Y, by having them fill out Z
-- Map - 
-- Composite Chart - 
+- Selector Menu of Cities - This allows the user to select one or multiple cities, for which will directly link to the city marker on the map, and the UVI readings on the composite chart.
+- Map - A world map will enable the user to view on displayed markers the country, city name and latitude.
+- Composite Chart - This illustrates the UVI readings for each city for each month of the year.
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+The above three features have been designed to link to one another to allow the user to visually compare city latitude locations, and how their UVI readings differ during the year. When cities of latitudes with a variance of 5 degrees are  compared, there is a general trend of similar UVI readings. Moreover, cities with a latitude that is closer to the earth's equatorial region have higher UVI readings compared to those that are further away.
 
-In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
+
+### Existing Feature Limitations
+Although the features enable the users to learn about UVI trends around the world based on the latitudes of cities, there is a limit to how much the user is able to analyse from the information provided. The UVI readings on the composite chart are provided as an illustration, based on [maximal UV Index values that are calculated for the 21st of each month.](https://www.who.int/uv/intersunprogramme/activities/uv_index/en/index3.html "WHO UV Index")
+
+Realtime UVI reading accessibility may be a consideration for allowing the user to compare the reality of the UVI reading to the illustrated values on the composite chart.
+
+The map may be considered to be colour coded along the latitudes to give the user an easier reference to the average UVI reading for different regions on Earth.
 
 ### Features Left to Implement
-- Another feature idea
+The following features are to be for future:
+- UVI Forecast Readings: 
+- Developing the data revealed from the composite chart:
 
 ## Technologies Used
 
