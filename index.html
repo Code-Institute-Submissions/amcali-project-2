@@ -30,10 +30,11 @@
 
     <title>Ultra Violet Radiation - UV Index Readings</title>
   </head>
+  
   <body>
     <div class = "container-fluid mt-0 mb-4">
 
-      <!--nav item -->
+      <!--nav menu item -->
       <ul class="nav nav-tabs fixed-top mt-2">
         <li class="nav-item dropdown" style="background-color: #D1E6E8;">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="color:#4682B4;"></a>
@@ -48,8 +49,9 @@
       
       <header class="mt-0 b-0 pt-4 pl-2 pr-2 pb-0"><h1>The UV Index (UVI)</h1></header>
 
+      <!--This section states the website purpose and starts an introduction into UVI-->
       <section id="about" class="page" style="min-height:700px;">
-      <div>
+        <div>
           <h2>About</h2>
           
           <p>
@@ -73,32 +75,39 @@
           </iframe>
         </div>  
       </section>
-      
+
+      <!--This section provided basic information about the UVI and the UVI readings-->      
       <section id="uvi-info" class="page" style="min-height:700px;">
-          <h2 class="mb-2">What Is The UV Index?</h2>
+
           <div>
-          <p>
-            The UVI is a measure of the level of UV radiation.
-            <br>
-            The values of the index range from zero upward - the higher the UVI, the greater the potential for damage to the skin and eye, and the less time it takes for harm to occur.
-            The UVI is an important vehicle to alert people about the need to use sun protection.
-          </p>
+            <h2 class="mb-2">What Is The UV Index?</h2>            
+            <p>
+              The UVI is a measure of the level of UV radiation.
+              <br>
+              The values of the index range from zero upward - the higher the UVI,
+              the greater the potential for damage to the skin and eye, and the less time 
+              it takes for harm to occur.
+              The UVI is an important vehicle to alert people about the need to use sun 
+              protection.
+            </p>
           </div>
-          
-          <h2>What Do The UV Index Readings Mean?</h2>
+
           <div>
-          <p>
-            UV radiation and subsequently the values of the index vary throughout the day. 
-            <br>
-            In reporting the UVI, most emphasis is placed on the maximum UV level on a given day. 
-            This occurs during the four-hour period around solar noon. 
-            <br>
-            Depending on geographical location and whether daylight saving time is applied, solar noon takes place between noon and 2 p.m. 
-            The media usually present a forecast of the maximum UV level for the following day.
-            <br>
-            UVI values are grouped into exposure categories:
-          </p>
-          
+            <h2>What Do The UV Index Readings Mean?</h2>            
+            <p>
+              UV radiation and subsequently the values of the index vary throughout the day. 
+              <br>
+              In reporting the UVI, most emphasis is placed on the maximum UV level on a given day. 
+              This occurs during the four-hour period around solar noon. 
+              <br>
+              Depending on geographical location and whether daylight saving time is applied, 
+              solar noon takes place between noon and 2pm. 
+              The media usually present a forecast of the maximum UV level for the following day.
+              <br>
+              UVI values are grouped into exposure categories:
+            </p>
+
+            <!--Table of UV Index Reading Categories-->          
             <table class="table" style="width:75%; color:black; font-weight:300; text-align:center;">
               <thead>
                 <tr>
@@ -147,11 +156,12 @@
           </div>    
 
       </section>
-      
+
+      <!--This section shows UVI readings and latitudes of 27 selected cities around the world-->      
       <section id="uvi-map-chart" class="page" style="min-height: 1500px;">
 
-        <h2>UV Index Readings In Different Cities</h2>
         <div>
+        <h2>UV Index Readings In Different Cities</h2>          
           <p>
               Graphical location and the time of the year have an impact on UV Index readings.
               The following graph illustrates the maximal UV index readings for selected cities on different months.
@@ -168,40 +178,44 @@
       
         <div><span>Select city/cities of choice:</span></div>
         <div id="discipline-selector"></div>    <!--displays selector menu for composite chart of cities' UV Index readings from Jan to Dec-->
-        <div id="map" class="container col-10"></div> 
-        <div id ="line-graph" style="width:100%;"></div> <!--To display uv-index data of selected countries during different months --> 
+
+        <div id="map" class="container row-10 col-10"></div> 
+        <div id ="line-graph" class="ml-2 pl-12" style="width:100%;"></div> <!--To display uv-index data of selected countries during different months --> 
       </section>
-      
+
+      <!--This section summarises the influence latitude and other factors have on UVI-->      
       <section id="summary" class="page" style="min-height:700px; width:100%;">
-      <h2>Summary</h2>
-      <div>
-      <p>
-        Latitude if one of other factors that influence UV radiation levels.
-        <br>
-        The closer the city is to equatorial regions, the higher the UV radiation levels.
-        <br>
-        Cities with similar latitude reveal similar UVI readings during different times of the year.
-      </p>
-      </div>
-        <div style="width:80%;">
-          <span>Other factors that influence UV radiation levels include:</span>
-        	<dl>
-          	<dt>Sun Elevation:</dt>
-          	  <dd>The higher the sun in the sky,the higher the UV radiation level.</dd>
-          	<dt>Latitude:</dt>
-          	  <dd>The closer to equatorial regions, the higher the UV radiation levels.</dd>
-          	<dt>Altitude:</dt>
-          	  <dd>At higher altitudes, a thinner atmosphere absorbs less UV radiation.</dd>
-          	<dt>Ozone:</dt>
-          	  <dd>Ozone absorbs some of the UV radiation that would otherwise reach the Earth’s surface.</dd>
-        	</dl>
-      	</div>
-      <div>
-        <span>
-        	More information on the UV Index may be found on the 
-        	<a href="https://www.who.int/uv/en/" target="_blank">World Health Organisation (WHO)</a> website.
-        </span>
-      </div>
+
+        <div>
+          <h2>Summary</h2>          
+          <p>
+            The latitude is one of some factors that influence UV radiation levels.
+            <br>
+            The closer the city is to equatorial regions, the higher the UV radiation levels.
+            <br>
+            Cities with similar latitude reveal similar UVI readings during different times of the year.
+          </p>
+        </div>
+          <div style="width:80%;">
+            <span>Other factors that influence UV radiation levels include:</span>
+          	<dl>
+            	<dt>Sun Elevation:</dt>
+            	  <dd>The higher the sun in the sky,the higher the UV radiation level.</dd>
+            	<dt>Latitude:</dt>
+            	  <dd>The closer to equatorial regions, the higher the UV radiation levels.</dd>
+            	<dt>Altitude:</dt>
+            	  <dd>At higher altitudes, a thinner atmosphere absorbs less UV radiation.</dd>
+            	<dt>Ozone:</dt>
+            	  <dd>Ozone absorbs some of the UV radiation that would otherwise reach the Earth’s surface.</dd>
+          	</dl>
+        	</div>
+        <div>
+          <br>
+          <span>
+          	More information on the UV Index may be found on the 
+          	<a href="https://www.who.int/uv/en/" target="_blank">World Health Organisation (WHO)</a> website.
+          </span>
+        </div>
       </section>
          
     </div> <!--end of container-fluid-->

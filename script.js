@@ -6,13 +6,12 @@
 /*global $*/
 
 
+
 /*Displaying active pages upon click of navigation bar drop down menu*/
 $(function() {
     
-
     $('.page').hide();
-    $('#about').show();
-
+    $('#about').show(); //displays 'About' page section on opening of website
 
     $(".dropdown-item").click(function(){
         // extract out the value of data-dest attribute for the
@@ -20,11 +19,10 @@ $(function() {
         let page = $(this).data('dest');
         $('.page').hide();
         $('#' + page).show();
-    })    
+    });    
 
 });  
 
- 
 
 /*Declaring an array to use when drawing the composite chart, 
 and generating information for contents of mapbox popup markers*/
@@ -72,17 +70,18 @@ let map = new mapboxgl.Map({
 });
 
 
-// Save all the markers into an array
+// All the markers are saved into an array
 // to be used for later according to drop down selection
 let long_lat_of_cities = [];
+
 
 for (let p of cityArray) {
 
     // Place a marker for each place into created array
     let m = new mapboxgl.Marker()
-        .setLngLat({lng: p.longitude, lat: p.latitude})       //{lng: <lng>, lat: <lat>}
+        .setLngLat({lng: p.longitude, lat: p.latitude})       //markers set according to city longitude and latitude
         .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-        .setHTML(`<h2>${p.country}:</h2><h3>${p.city}</h3><p>${p.latReading}</p>`))
+        .setHTML(`<h6>${p.country}:</h6><h6>${p.city}</h6><p>${p.latReading}</p>`))
         .addTo(map);
 
     // add the created marker to the list of all markers
@@ -90,19 +89,23 @@ for (let p of cityArray) {
 
 }
 
-map.setRenderWorldCopies(false);
-map.dragPan.enable();
+
+map.setRenderWorldCopies(false); //prevents repetitive copy of the map
+map.dragPan.enable();       //enable user to drag the map to view certain section in given map container
 
 
 /* The following is to enable markers on the map to appear with the graph line according 
 to the city selected from the select menu*/
 
 $(document).on('change', '.dc-select-menu', function () {
+    
     clearMarkers();
+    
     $( ".dc-select-menu option:selected" ).each(function() {
       createmarker($( this ).text());
     });
 });
+
 
 function createmarker(place) {
     let selectall = false;
@@ -115,7 +118,7 @@ function createmarker(place) {
             let m = new mapboxgl.Marker()
             .setLngLat({lng: p.longitude, lat: p.latitude})       
             .setPopup(new mapboxgl.Popup({ offset: 25 }) // add popups
-            .setHTML(`<h5>${p.country}:</h5><h6>${p.city}</h6><p>${p.latReading}</p>`))
+            .setHTML(`<h6>${p.country}</h6><p>${p.city}<br>${p.latReading}</p>`))
             .addTo(map);
         
             // add the created marker to the list of all markers
@@ -126,6 +129,7 @@ function createmarker(place) {
     }
 }
 
+
 function clearMarkers() {
     for(let m of long_lat_of_cities) {
         m.remove();
@@ -134,7 +138,9 @@ function clearMarkers() {
 }
 
 
+
 /*Creating the Composite Chart*/ 
+
 queue()
 
     // Data for UV index readings are stored in a local .json file. the following calls the relative filepath to the .json file        
@@ -144,6 +150,7 @@ queue()
 
 /*the following will create a parse method to convert the month from string to a standard month format, 
 and call the functions that create the selector menu and composite chart. */
+
 function makeGraphs(error, uvIndexData){ 
 
     // Creating a cross filter; data for UVI readings are from in .json file
@@ -167,6 +174,7 @@ function makeGraphs(error, uvIndexData){
 /*creates the multiple selector menu of cities for use to choose line chart 
 of city choice on composite chart to view the UV index readings from January 
 to December*/
+
 function show_discipline_selector(transactionCrossFilter){
 
     let city_dim = transactionCrossFilter.dimension(dc.pluck("city"));
@@ -178,11 +186,10 @@ function show_discipline_selector(transactionCrossFilter){
         .multiple(true)
         .controlsUseVisibility(true)
         .title(kv => kv.key);       //hides number of readings per city displaying on menu selector
-    
 }
 
 
-
+/*creates the line graphs for the UVI readings for each city*/
 
 function show_line_graphs(transactionCrossFilter){
 
@@ -220,8 +227,8 @@ function show_line_graphs(transactionCrossFilter){
     );
 
 
-   let min_month = month_dim.bottom(1)[0].month;
-   let max_month = month_dim.top(1)[0].month;
+    let min_month = month_dim.bottom(1)[0].month;
+    let max_month = month_dim.top(1)[0].month;
 
    // Dimension grouping (ie. summarising of each data point) is done by city
     function uv_by_city(city) {
@@ -236,20 +243,19 @@ function show_line_graphs(transactionCrossFilter){
     }
 
 
-
    /* Dimension grouping by city and color for purpose to draw different lines
    on composite chart*/
 
-  let compositeChart = dc.compositeChart('#line-graph');
+    let compositeChart = dc.compositeChart('#line-graph');
 
-     let chartsOfLineCharts = [];
-     for (each_city of cityArray){
-     let uvOfCities = month_dim.group().reduceSum(uv_by_city(each_city.city)); //pushes the reduceSum of uv index for each city into the array, and grouped by month
-     let c = dc.lineChart(compositeChart)
+    let chartsOfLineCharts = [];
+    for (each_city of cityArray){
+        let uvOfCities = month_dim.group().reduceSum(uv_by_city(each_city.city)); //pushes the reduceSum of uv index for each city into the array, and grouped by month
+        let c = dc.lineChart(compositeChart)
            .colors(each_city.color)
            .group(uvOfCities, each_city.city);
-
-         chartsOfLineCharts.push(c);
+        
+        chartsOfLineCharts.push(c);
 
      }
 
@@ -285,17 +291,5 @@ function show_line_graphs(transactionCrossFilter){
         
     compositeChart.render();
 
-
 }  //end of show_line_graphs function
 
-  
-
-
-
-// function does not work to disable multiselect on select Menu when 'select all is highlighted'
-// $(document).on('click', '.dc-select-menu', function disableMultiselect (){
-//          
-//         if(choice == "Select all")
-//             return dc.selectMenu("#discipline-selector")
-//                     .multiple(false);
-// });
