@@ -21,7 +21,7 @@ The original wireframe to the website project may be found [here](https://github
 
 
 The following User Story Scenarios, will walkthrough the purpose of each webpage and how it is used:
--1. As a first time user, one would visit the About page, so that they may understand the purpose of the website.
+1) As a first time user, one would visit the About page, so that they may understand the purpose of the website.
 -2. As a first time user with minimal or no understanding about ultraviolet rays, one would view the video on the About page so to get brief insight on the UV Rays and UV Index topic.
 -3. As a new user who wishes to explore the menu contents at a glance, one would view the option stating "What is the UVI" to get a quick understanding of the website topic.
 -4. As a user who wants further understanding on the UVI, one would visit the menu page "UVI Around THe World", so to gain further understanding on what the webpage pertains to, and to explore the topic.
