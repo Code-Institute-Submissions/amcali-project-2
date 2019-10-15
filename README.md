@@ -22,7 +22,7 @@ The original wireframe to the website project may be found [here](https://github
 
 
 The following User Story Scenarios, will walkthrough the purpose of each webpage and how it is used:
-- 1. As a first time user, one would visit the About (Home) page, so that they may understand the purpose of the website.
+- 1. As a first time user, one would visit the About page, so that they may understand the purpose of the website.
 - 2. As a first time user with minimal or no understanding about ultraviolet rays, one would view the video on the About page so to get brief insight on the UV Rays and UV Index topic.
 - 3. As a new user who wishes to explore the menu contents at a glance, one would view the option stating "What is the UVI" to get a quick understanding of the website topic.
 - 4. As a user who wants further understanding on the UVI, one would visit the menu page "UVI Around THe World", so to gain further understanding on what the webpage pertains to, and to explore the topic.
@@ -79,13 +79,13 @@ The following features are to be for future:
 
 In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
 
-- [HTML](https://getbootstrap.com/)
+- [HTML](https://www.w3schools.com/html/)
     - The project uses **HTML** to create the content of the web pages.
-- [CSS](https://getbootstrap.com/)
+- [CSS](https://www.w3schools.com/css/)
     - The project uses **CSS** to style and modify some of the webpage elements.
 - [Bootstrap](https://getbootstrap.com/)
     - The project uses **Bootstrap** as the UI framework and for structuring and styling the layout of the featured elements on the website.
-- [JavaScript](https://getbootstrap.com/)
+- [JavaScript](https://www.w3schools.com/js/)
     - The project uses **JavaScript** as the language to create some of the interaction and events between the features.    
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
@@ -103,6 +103,7 @@ Manual testing was conducted throughout the development of this project, the fol
 1. Navigation Drop Down Menu:
     1. Click on the Navigation menu and a drop down of the available webpages are visible for user selection: About; What is UVI; UVI Around the World; Summary.
     2. Click on each of the navigation drop down menu items, and find that only the respective webpage will appear.
+    - Issues: On clicking any navigation menu item, the selected tab becomes dark-blue (Bootstrap default setting).
 
 2. Video:
     1. Open the website link to view the "About" page appear as the homepage.
@@ -116,16 +117,18 @@ Manual testing was conducted throughout the development of this project, the fol
     2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
 
 5. Menu Selector:
-    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
-    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.   
+    1. Open the "UVI Around the World" page
+    2. On the menu selector, the page will automatically highlight "Select all", for which the map will show all markers and the composite chart will show all graph lines of all the city names displayed in the menu selector.
+    3. Try to select one country in the menu selector; the respective marker will show up on the map, and the composite chart will only display the respective UVI readings for that city.
+    4. Try to select multiple cities; the respective markers will show up on the map, and the composite chart will only display the UVI readings of those cities.
+    - Issues: While the "Select all" option is highlighted, the other cities can also be selected simultaneously. The result will end up showing the markers and UVI readings of the selected cities.
 
-4. __Map__:
-    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
-    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.    
+4. Map:
+    1. Open the "UVI Around the World" webpage, and click the markers to find the marker popup box appear and display the country name, city name and latitude. Click the 'x' button to close the popup box.
+    2. Open the "UVI Around the World" webpage and on the map, zoom in to view the map closer up.
+    3. Open the "UVI Around the World" webpage  and on the map, zoom out to view the map in smaller size.
+    4. Open the "UVI Around the World" webpage  and on the map, drag the map from any location to find that it moves. 
+    - Issues - On small mobile devices, the map does and popup boxes are unable to scale accordingly. Hence, the option for the user to drag the map has been enabled to compensate for the UX matter.
 
 5. __Composite Chart__:
     1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
