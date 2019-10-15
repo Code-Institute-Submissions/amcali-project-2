@@ -130,17 +130,13 @@ Manual testing was conducted throughout the development of this project, the fol
     4. Open the "UVI Around the World" webpage  and on the map, drag the map from any location to find that it moves. 
     - Issues - On small mobile devices, the map does and popup boxes are unable to scale accordingly. Hence, the option for the user to drag the map has been enabled to compensate for the UX matter.
 
-5. __Composite Chart__:
-    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
-    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.    
+5. Composite Chart:
+    1. Open the "UVI Around the World" webpage and view the composite chart. Upon multiple line graphs being displayed, hover over the city stated in the legend. The city which corresponds to the graph line displayed will become bold.
+    - Issues: 1. Y-axis label is truncated from the graph.
+              2. On small mobile devices, the graph becomes very small in comparison to the text content displayed on the webpage.
 
-6. __Mobile Responsive__:
-    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
-    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.    
+6. Mobile Responsive:
+    1. Open any of the webpages; aside from the map and composite chart (issues mentioned above), the headers and text contents, tables and videos will respond according to the size of the medium device that accesses the website.
 
 
 In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
