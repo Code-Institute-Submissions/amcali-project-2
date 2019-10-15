@@ -5,7 +5,8 @@ The topic of Ultra Voilet Rays (UV Rays) or matters pertaining to it may be mere
 Most matters which cover the topic would relate to the health hazards which derive from the matter.
 What actually creates UV rays may not be well understood.
 Hence, this project is covering a sub topic on the UV: the UV Index.
-The ultimate aim of the website is to give brief insight to the website user on the UV Index readings, and cover on one of the influences of UV Rays: the earth's latitude.
+
+The ultimate aim of the website is to give brief insight to the website user on the UV Index readings, and cover on one of the influences of UV Rays: the Earth's latitude.
 
 The main aim of the website is to enable users via interaction with the present multimedia (video), map and chart to gain an understanding on a minor aspect of the UV Index (UVI).
 
