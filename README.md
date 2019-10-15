@@ -15,8 +15,6 @@ The link to the project may be found [here.](https://amcali.github.io/project-2/
 
 ## UX
 
-*Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
 This website is for any individual who wishes to have insight on the UV Index through some interactive mediums.
 The original wireframe to the website project may be found [here](https://github.com/amcali/project-2/issues/1#issue-506329084 "Project 2 Wireframe").
 
@@ -77,18 +75,20 @@ The following features are to be for future:
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+The following were used to create this project:
 
-- [HTML](https://www.w3schools.com/html/)
-    - The project uses **HTML** to create the content of the web pages.
+- [HTML](https://html.com/)
+    - **HTML** is used to create the content of the web pages.
 - [CSS](https://www.w3schools.com/css/)
-    - The project uses **CSS** to style and modify some of the webpage elements.
+    - **CSS** is implemented to style and modify some of the webpage elements.
 - [Bootstrap](https://getbootstrap.com/)
-    - The project uses **Bootstrap** as the UI framework and for structuring and styling the layout of the featured elements on the website.
-- [JavaScript](https://www.w3schools.com/js/)
-    - The project uses **JavaScript** as the language to create some of the interaction and events between the features.    
+    - **Bootstrap** is implemented as the UI framework and for structuring and styling the layout of the featured elements on the website.
+- [JavaScript](https://www.javascript.com/)
+    - **JavaScript** is the language to create some of the interaction and events between the features. 
+- [JSON](http://www.json.org/)    
+    - **JSON** is used to store the dataset created for generating the composite chart.
 - [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+    - **JQuery** is used in this project to simplify DOM manipulation.
 - [Crossfilter & DC Charts](https://dc-js.github.io/dc.js/docs/html/dc.html)
     - The project uses **JavaScript Crossfilter and DC Charts** to create the composite chart and menu selector.
 - [Mapbox](https://www.mapbox.com/)
@@ -148,6 +148,7 @@ If this section grows too long, you may want to split it off into a separate fil
 ## Deployment
 
 This project was developed on AWS Cloud9, and deployed to GitHub.
+The indivdual local files are available [here](https://github.com/amcali/project-2).
 
 
 ## Credits
@@ -159,10 +160,11 @@ This project was developed on AWS Cloud9, and deployed to GitHub.
 - [Global Solar UV Index (.pdf file)](https://apps.who.int/iris/bitstream/handle/10665/42459/9241590076.pdf;jsessionid=AE8115B74FAB79A3811A1D3FEAC0652D?sequence=1)
 
 ### Dataset
+The JSON file dataset were copied from the WHO website: [UV Index: UV Measurements](https://www.who.int/uv/intersunprogramme/activities/uv_index/en/index3.html) 
 
 ### Media
-- The photos used in this site were obtained from ...
+- The video used in the "About" section was taken from [Youtube](https://www.youtube.com/). The link to the video is available [here](https://www.youtube.com/embed/WyWZ6RZkWrg), which is from the [Trinidad and Tobago Meterological Service](https://metoffice.gov.tt).
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from the [World Health Organisation (WHO)](https://www.who.int).
