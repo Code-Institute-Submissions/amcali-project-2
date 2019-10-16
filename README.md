@@ -1,16 +1,11 @@
-# The UV Index
+# Ultra Violet Radation - The UV Index
 
 
-The topic of Ultra Voilet Rays (UV Rays) or matters pertaining to it may be merely understood by many individuals. 
-Most matters which cover the topic would relate to the health hazards which derive from the matter.
-What actually creates UV rays may not be well understood.
-Hence, this project is covering a sub topic on the UV: the UV Index.
+The Ultra Voilet Radiation (UV Radiation) have numerous topics which may or may not be understood. The ones which are usually heard of may tend to be related to the health hazards which derive from the matter, such as sun burn and skin cancer. There may be a possibility that what influences UV rays may not be well understood, which this project touches on by focusing on one influential factor: the Ultra Violet Index (UVI).
 
-The ultimate aim of the website is to give brief insight to the website user on the UV Index readings, and cover on one of the influences of UV Rays: the Earth's latitude.
+The ultimate aim of the website is to give brief insight to the website user on the UVI readings, and cover on one of its influential factors: the Earth's latitude. Via interaction mediums (a video, a map and a chart) on the website, the way in which cities on earth are located can be seen to have a trend on the UVI level.
 
-The main aim of the website is to enable users via interaction with the present multimedia (video), map and chart to gain an understanding on a minor aspect of the UV Index (UVI).
-
-The link to the project may be found [here.](https://amcali.github.io/project-2/)
+The link to this project is available [here.](https://amcali.github.io/project-2/)
 
 
 
