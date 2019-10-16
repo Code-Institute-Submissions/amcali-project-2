@@ -14,17 +14,19 @@ The link to this project is available [here.](https://amcali.github.io/project-2
 This website is for any individual who wishes to have insight on the UV Index through some interactive mediums.
 The original wireframe to the website project may be found [here](https://github.com/amcali/project-2/issues/1#issue-506329084 "Project 2 Wireframe").
 
+Minimal design was implemented into the website, as the focus was more on the user to be able to use the interactive mediums and to gain information on the topic presented.
+
 
 The following User Story Scenarios, will walkthrough the purpose of each webpage and how it is used:
-1) As a first time user, one would visit the About page, so that they may understand the purpose of the website.
+1) As a first time user, one would view the "About" page which appears on opening the website. This is so that they may understand the purpose of the website.
 
-2) As a first time user with minimal or no understanding about ultraviolet rays, one would view the video on the About page so to get brief insight on the UV Rays and UV Index topic.
+2) As a first time user with minimal or no understanding about Ultra Violet Rays (UV Rays), one would view the video on the "About" page so to get brief insight on the UV Rays and UVI topic.
 
-3) As a new user who wishes to explore the menu contents at a glance, one would view the option stating "What is the UVI" to get a quick understanding of the website topic.
+3) As a new user who wishes to explore the menu contents at a glance, one would open the navigation menu, and select the view the "What is UVI" tab to open the respective webpage, so as to get a quick understanding of the website topic.
 
-4) As a user who wants further understanding on the UVI, one would visit the menu page "UVI Around THe World", so to gain further understanding on what the webpage pertains to, and to explore the topic.
+4) As a user who wishes to seek further understanding on the UVI, one would open the navigation menu, and select the "UVI Around The World" tab to open the respective webpage, so to gain further understanding on what the webpage pertains to, and to explore the topic.
 
-5) As new a user who dived into the webpage and viewed the map and chart, one would end up reading the content on the webpage, so as to understand how the map and chart work hand-in-hand.
+5) As new a user who dived into the webpage and viewed the map and chart, one would end up reading the content on the "UVI Around The World" webpage, so as to understand how the map and chart work hand-in-hand.
 
 6) As a user who wishes to understand the purpose of the website contents in a nutshell, one would visit the "Summary" webpage, so as to understand how the other webpages' contents compliment one another and have an option to access further information to another website.
 
