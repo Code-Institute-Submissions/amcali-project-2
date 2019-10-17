@@ -93,7 +93,7 @@ The following were used to create this project:
     - **Bootstrap** is implemented as the UI framework and for structuring and styling the layout of the featured elements on the website.
 - [JavaScript](https://www.javascript.com/)
     - **JavaScript** is the language to create some of the interaction and events between the features. 
-- [JSON](http://www.json.org/)    
+- [JSON](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)    
     - **JSON** is used to store the dataset created for generating the composite chart.
 - [JQuery](https://jquery.com)
     - **JQuery** is used in this project to simplify DOM manipulation.
