@@ -131,20 +131,20 @@ Manual testing was conducted throughout the development of this project, the fol
 4) Try to select multiple cities; the respective markers will show up on the map, and the composite chart will only display the UVI readings of those cities.
 - **Issues:** While the "Select all" option is highlighted, the other cities can also be selected simultaneously. The result will end up showing the markers and UVI readings of the selected cities.
 
-#### 4. Map:
+#### 6. Map:
 1) Open the "UVI Around the World" webpage, and click the markers to find the marker popup box appear and display the country name, city name and latitude. Click the 'x' button to close the popup box.
 2) Open the "UVI Around the World" webpage and on the map, zoom in to view the map closer up.
 3) Open the "UVI Around the World" webpage  and on the map, zoom out to view the map in smaller size.
 4) Open the "UVI Around the World" webpage  and on the map, drag the map from any location to find that it moves. 
-- **Issues** - On small mobile devices, the map does and popup boxes are unable to scale accordingly. Hence, the option for the user to drag the map has been enabled to compensate for the UX matter.
+- **Issues:** On small mobile devices, the map does and popup boxes are unable to scale accordingly. Hence, the option for the user to drag the map has been enabled to compensate for the UX matter.
 
-#### 5. Composite Chart:
+#### 7. Composite Chart:
 1) Open the "UVI Around the World" webpage and view the composite chart. Upon multiple line graphs being displayed, hover over the city stated in the legend. The city which corresponds to the graph line displayed will become bold.
 - **Issues:**
     - **1)** Y-axis label is truncated from the graph.
     - **2)** On small mobile devices, the graph becomes very small in comparison to the text content displayed on the webpage.
 
-#### 6. Mobile Responsive:
+#### 8. Mobile Responsive:
 1) Open any of the webpages; aside from the map and composite chart (issues mentioned above), the headers and text contents, tables and videos will respond according to the size of the medium device that accesses the website.
 
 
