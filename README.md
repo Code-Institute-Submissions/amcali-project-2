@@ -57,7 +57,7 @@ The contents of the website have been divided into the following sections:
 
 ### Existing Features
 
-The following features are found in the "UV Index Around the World" page:
+The following features are found in the "UVI Around the World" page:
 
 1) [Selector Menu of Cities](https://github.com/amcali/project-2/issues/3) - This allows the user to select one or multiple cities, for which will directly link to the city marker on the map, and the UVI readings on the composite chart.
 2) [Map](https://github.com/amcali/project-2/issues/2) - A world map will enable the user to view on displayed markers the country, city name and latitude.
