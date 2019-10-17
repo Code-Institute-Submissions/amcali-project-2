@@ -162,7 +162,7 @@ The indivdual local files are available [here](https://github.com/amcali/project
 - The the sections named "What is UVI", "UVI Around The World", and "Summary", text content and data displayed in the composite chart were copied from the following pages, and avaiable document from the World Health Organisation (WHO) website:
 - [UV Index: UV Measurements](https://www.who.int/uv/intersunprogramme/activities/uv_index/en/index3.html)
 - [Global Solar UV Index](https://www.who.int/uv/publications/globalindex/en/)
-- [Global Solar UV Index (.pdf file)](https://apps.who.int/iris/bitstream/handle/10665/42459/9241590076.pdf;jsessionid=AE8115B74FAB79A3811A1D3FEAC0652D?sequence=1)
+- [Global Solar UV Index (pdf file)](https://apps.who.int/iris/bitstream/handle/10665/42459/9241590076.pdf;jsessionid=AE8115B74FAB79A3811A1D3FEAC0652D?sequence=1)
 
 ### Dataset
 The JSON file dataset were copied from the WHO website: [UV Index: UV Measurements](https://www.who.int/uv/intersunprogramme/activities/uv_index/en/index3.html) 
