@@ -67,7 +67,7 @@ The above three features have been designed to link to one another to allow the 
 
 
 ### Existing Feature Limitations
-Although the features enable the users to learn about UVI trends around the world based on the latitudes of cities, there is a limit to how much the user is able to analyse from the information provided. The UVI readings on the composite chart are provided as an illustration, based on maximal [UV Index values](https://www.who.int/uv/intersunprogramme/activities/uv_index/en/index3.html "WHO UV Index") that are calculated for the 21st of each month.
+Although the features enable the users to learn about UVI trends around the world based on the latitudes of cities, there is a limit to how much the user is able to analyse from the information provided. The UVI readings on the composite chart are provided as an illustration, based on maximal [UVI values](https://www.who.int/uv/intersunprogramme/activities/uv_index/en/index3.html "WHO UV Index") that are calculated for the 21st of each month.
 
 Realtime UVI reading accessibility may be a consideration for allowing the user to compare the reality of the UVI reading to the illustrated values on the composite chart.
 
