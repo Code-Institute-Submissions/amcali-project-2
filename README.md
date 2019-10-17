@@ -1,33 +1,34 @@
-# The UV Index
+# Ultra Violet Radation - The UV Index
 
 
-The topic of Ultra Voilet Rays (UV Rays) or matters pertaining to it may be merely understood by many individuals. 
-Most matters which cover the topic would relate to the health hazards which derive from the matter.
-What actually creates UV rays may not be well understood.
-Hence, this project is covering a sub topic on the UV: the UV Index.
-The ultimate aim of the website is to give brief insight to the website user on the UV Index readings, and cover on one of the influences of UV Rays: the earth's latitude.
+The Ultra Voilet Radiation (UV Radiation) have numerous topics which may or may not be understood. The ones which are usually heard of may tend to be related to the health hazards which derive from the matter, such as sun burn and skin cancer. There may be a possibility that what influences UV rays may not be well understood, which this project touches on by focusing on one influential factor: the Ultra Violet Index (UVI).
 
-The main aim of the website is to enable users via interaction with the present multimedia (video), map and chart to gain an understanding on a minor aspect of the UV Index (UVI).
+The ultimate aim of the website is to give brief insight to the website user on the UVI readings, and cover on one of its influential factors: the Earth's latitude. Via interaction mediums (a video, a map and a chart) on the website, the way in which cities on earth are located can be seen to have a trend on the UVI level.
 
-The link to the project may be found [here.](https://amcali.github.io/project-2/)
+The link to this project is available [here.](https://amcali.github.io/project-2/)
 
 
 
 ## UX
 
-*Use this section to provide insight into your UX process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
-
 This website is for any individual who wishes to have insight on the UV Index through some interactive mediums.
 The original wireframe to the website project may be found [here](https://github.com/amcali/project-2/issues/1#issue-506329084 "Project 2 Wireframe").
 
+Minimal design was implemented into the website, as the focus was more on the user to be able to use the interactive mediums and to gain information on the topic presented.
+
 
 The following User Story Scenarios, will walkthrough the purpose of each webpage and how it is used:
-- 1. As a first time user, one would visit the About (Home) page, so that they may understand the purpose of the website.
-- 2. As a first time user with minimal or no understanding about ultraviolet rays, one would view the video on the About page so to get brief insight on the UV Rays and UV Index topic.
-- 3. As a new user who wishes to explore the menu contents at a glance, one would view the option stating "What is the UVI" to get a quick understanding of the website topic.
-- 4. As a user who wants further understanding on the UVI, one would visit the menu page "UVI Around THe World", so to gain further understanding on what the webpage pertains to, and to explore the topic.
-- 5. As new a user who dived into the webpage and viewed the map and chart, one would end up reading the content on the webpage, so as to understand how the map and chart work hand-in-hand.
-- 6. As a user who wishes to understand the purpose of the website contents in a nutshell, one would visit the "Summary" webpage, so as to understand how the other webpages' contents compliment one another and have an option to access further information to another website.
+1) As a first time user, one would view the "About" page which appears on opening the website. This is so that they may understand the purpose of the website.
+
+2) As a first time user with minimal or no understanding about Ultra Violet Rays (UV Rays), one would view the video on the "About" page so to get brief insight on the UV Rays and UVI topic.
+
+3) As a new user who wishes to explore the menu contents at a glance, one would open the navigation menu, and select the view the "What is UVI" tab to open the respective webpage, so as to get a quick understanding of the website topic.
+
+4) As a user who wishes to seek further understanding on the UVI, one would open the navigation menu, and select the "UVI Around The World" tab to open the respective webpage, so to gain further understanding on what the webpage pertains to, and to explore the topic.
+
+5) As new a user who dived into the webpage and viewed the map and chart, one would end up reading the content on the "UVI Around The World" webpage, so as to understand how the map and chart work hand-in-hand.
+
+6) As a user who wishes to understand the purpose of the website contents in a nutshell, one would visit the "Summary" webpage, so as to understand how the other webpages' contents compliment one another and have an option to access further information to another website.
 
 
 
@@ -77,18 +78,20 @@ The following features are to be for future:
 
 ## Technologies Used
 
-In this section, you should mention all of the languages, frameworks, libraries, and any other tools that you have used to construct this project. For each, provide its name, a link to its official site and a short sentence of why it was used.
+The following were used to create this project:
 
-- [HTML](https://getbootstrap.com/)
-    - The project uses **HTML** to create the content of the web pages.
-- [CSS](https://getbootstrap.com/)
-    - The project uses **CSS** to style and modify some of the webpage elements.
+- [HTML](https://html.com/)
+    - **HTML** is used to create the content of the web pages.
+- [CSS](https://www.w3schools.com/css/)
+    - **CSS** is implemented to style and modify some of the webpage elements.
 - [Bootstrap](https://getbootstrap.com/)
-    - The project uses **Bootstrap** as the UI framework and for structuring and styling the layout of the featured elements on the website.
-- [JavaScript](https://getbootstrap.com/)
-    - The project uses **JavaScript** as the language to create some of the interaction and events between the features.    
+    - **Bootstrap** is implemented as the UI framework and for structuring and styling the layout of the featured elements on the website.
+- [JavaScript](https://www.javascript.com/)
+    - **JavaScript** is the language to create some of the interaction and events between the features. 
+- [JSON](http://www.json.org/)    
+    - **JSON** is used to store the dataset created for generating the composite chart.
 - [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+    - **JQuery** is used in this project to simplify DOM manipulation.
 - [Crossfilter & DC Charts](https://dc-js.github.io/dc.js/docs/html/dc.html)
     - The project uses **JavaScript Crossfilter and DC Charts** to create the composite chart and menu selector.
 - [Mapbox](https://www.mapbox.com/)
@@ -103,6 +106,7 @@ Manual testing was conducted throughout the development of this project, the fol
 1. Navigation Drop Down Menu:
     1. Click on the Navigation menu and a drop down of the available webpages are visible for user selection: About; What is UVI; UVI Around the World; Summary.
     2. Click on each of the navigation drop down menu items, and find that only the respective webpage will appear.
+    - Issues: On clicking any navigation menu item, the selected tab becomes dark-blue (Bootstrap default setting).
 
 2. Video:
     1. Open the website link to view the "About" page appear as the homepage.
@@ -116,28 +120,26 @@ Manual testing was conducted throughout the development of this project, the fol
     2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
 
 5. Menu Selector:
-    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
-    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.   
+    1. Open the "UVI Around the World" page
+    2. On the menu selector, the page will automatically highlight "Select all", for which the map will show all markers and the composite chart will show all graph lines of all the city names displayed in the menu selector.
+    3. Try to select one country in the menu selector; the respective marker will show up on the map, and the composite chart will only display the respective UVI readings for that city.
+    4. Try to select multiple cities; the respective markers will show up on the map, and the composite chart will only display the UVI readings of those cities.
+    - Issues: While the "Select all" option is highlighted, the other cities can also be selected simultaneously. The result will end up showing the markers and UVI readings of the selected cities.
 
-4. __Map__:
-    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
-    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.    
+4. Map:
+    1. Open the "UVI Around the World" webpage, and click the markers to find the marker popup box appear and display the country name, city name and latitude. Click the 'x' button to close the popup box.
+    2. Open the "UVI Around the World" webpage and on the map, zoom in to view the map closer up.
+    3. Open the "UVI Around the World" webpage  and on the map, zoom out to view the map in smaller size.
+    4. Open the "UVI Around the World" webpage  and on the map, drag the map from any location to find that it moves. 
+    - Issues - On small mobile devices, the map does and popup boxes are unable to scale accordingly. Hence, the option for the user to drag the map has been enabled to compensate for the UX matter.
 
-5. __Composite Chart__:
-    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
-    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.    
+5. Composite Chart:
+    1. Open the "UVI Around the World" webpage and view the composite chart. Upon multiple line graphs being displayed, hover over the city stated in the legend. The city which corresponds to the graph line displayed will become bold.
+    - Issues: 1. Y-axis label is truncated from the graph.
+              2. On small mobile devices, the graph becomes very small in comparison to the text content displayed on the webpage.
 
-6. __Mobile Responsive__:
-    1. Open the "About" webpage, and find the underlined hyperlink for "Trinidad and Tobago Meterological Service" opens the organisation's website in an external web browser.
-    2. Open the "Summary" webpage, and find the underlined hyperlinks for "World Health Organisation (WHO)" open to the organisation's website in an external web browser.
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.    
+6. Mobile Responsive:
+    1. Open any of the webpages; aside from the map and composite chart (issues mentioned above), the headers and text contents, tables and videos will respond according to the size of the medium device that accesses the website.
 
 
 In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
@@ -148,24 +150,24 @@ If this section grows too long, you may want to split it off into a separate fil
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
-
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
-
-In addition, if it is not obvious, you should also describe how to run your code locally.
+This project was developed on AWS Cloud9, and deployed to GitHub.
+The indivdual local files are available [here](https://github.com/amcali/project-2).
 
 
 ## Credits
 
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The the sections named "What is UVI", "UVI Around The World", and "Summary", text content and data displayed in the composite chart were copied from the following pages, and avaiable document from the World Health Organisation (WHO) website:
+- [UV Index: UV Measurements](https://www.who.int/uv/intersunprogramme/activities/uv_index/en/index3.html)
+- [Global Solar UV Index](https://www.who.int/uv/publications/globalindex/en/)
+- [Global Solar UV Index (.pdf file)](https://apps.who.int/iris/bitstream/handle/10665/42459/9241590076.pdf;jsessionid=AE8115B74FAB79A3811A1D3FEAC0652D?sequence=1)
+
+### Dataset
+The JSON file dataset were copied from the WHO website: [UV Index: UV Measurements](https://www.who.int/uv/intersunprogramme/activities/uv_index/en/index3.html) 
 
 ### Media
-- The photos used in this site were obtained from ...
+- The video used in the "About" section was taken from [Youtube](https://www.youtube.com/). The link to the video is available [here](https://www.youtube.com/embed/WyWZ6RZkWrg), which is from the [Trinidad and Tobago Meterological Service](https://metoffice.gov.tt).
 
 ### Acknowledgements
 
-- I received inspiration for this project from X
+- I received inspiration for this project from the [World Health Organisation (WHO)](https://www.who.int).
