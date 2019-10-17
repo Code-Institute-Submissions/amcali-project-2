@@ -1,4 +1,4 @@
-# Ultra Violet Radation - The UV Index
+# Ultra Violet Radiation - The UV Index
 
 
 The Ultra Voilet Radiation (UV Radiation) have numerous topics which may or may not be understood. The ones which are usually heard of may tend to be related to the health hazards which derive from the matter, such as sun burn and skin cancer. There may be a possibility that what influences UV rays may not be well understood, which this project touches on by focusing on one influential factor: the Ultra Violet Index (UVI).
